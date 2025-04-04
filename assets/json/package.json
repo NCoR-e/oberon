@@ -1,0 +1,14 @@
+{
+  "name": "oberon",
+  "version": "1.0.0",
+  "description": "none",
+  "source": "login-page.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmitriy NCoRe",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.86.0"
+  }
+}
