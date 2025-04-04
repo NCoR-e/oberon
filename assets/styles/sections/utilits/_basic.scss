@@ -1,0 +1,62 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+@font-face {
+    font-family: 'Allerta';
+    src: url('../../fonts/Allerta-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Allerta', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+li {
+    list-style: none;
+}
+
+figure, blockquote {
+    margin: 0;
+}
+
+hr {
+    margin: 0;
+    width: 100%;
+}
+
+input {
+    outline: 0;
+    border: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+

@@ -1,0 +1,574 @@
+@use "../utilits/variables" as v;
+@use "../utilits/mixins" as m;
+@use "../utilits/media" as media;
+
+/* ---- [THIS STYLED auth-form]
+/* [!] = @include media.desktop and other = adaptive.v */
+
+html.authPage {
+
+    body {
+        @include m.d-flex(flex, center, center);
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0.7)), url(../../media/main-bg.png);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        /* [ENG] style main-conteiner = [main] + adaptive.v */
+        main {
+
+            /* 3549.98px */
+            @include media.desktop-xl {
+                width: 640px;
+                height: 560px;
+            }
+
+            /* 2559.98px */
+            @include media.desktop-l {
+                width: 500px;
+                height: 460px;
+            }
+
+            /* 1399.98px */
+            @include media.desktop-s {
+                width: 420px;
+                height: 380px;
+            }
+
+            /* 1023.98px */
+            @include media.tablet {
+                width: 400px;
+                height: 360px;
+            }
+
+            /* 768.98px */
+            @include media.mobile {
+                width: 350px;
+                height: 320px;
+            }
+
+            /* 575.98px */
+            @include media.mobile-s {
+                width: 240px;
+                height: 320px;
+            }
+
+            /* wrapper-box */
+            div.wrapper {
+                border-radius: 25px;
+                background-color: v.$black-45;
+                backdrop-filter: blur(35px);
+                border: 1px solid v.$FFF-65;
+                width: 100%;
+                height: 100%;
+
+                div.header-form,
+                div.body-form,
+                div.footer-form {
+                    display: flex;
+                }
+
+                /* head + adaptive.v */
+                div.header-form {
+                    @include m.d-flex (flex, center, center);
+                    column-gap: 5%;
+                    background-color: v.$FFF-85;
+                    border-radius: 25px 25px 0px 0px;
+
+                    img {
+                        -webkit-user-drag: none;
+                    }
+
+                    h2 {
+                        color: rgba(0, 0, 0, 0.75);
+                        letter-spacing: 5px;
+                    }
+
+
+                    @include media.desktop-xl {
+                        height: 90px;
+
+                        img {
+                            width: 75px;
+                            height: 75px;
+                        }
+
+                        h2 {
+                            font-size: 32px;
+                        }
+                    }
+
+                    @include media.desktop-l {
+                        height: 70px;
+
+                        img {
+                            width: 60px;
+                            height: 60px;
+                        }
+
+                        h2 {
+                            font-size: 28px;
+                        }
+                    }
+
+                    @include media.desktop-s {
+                        height: 55px;
+
+                        img {
+                            width: 44px;
+                            height: 44px;
+                        }
+
+                        h2 {
+                            font-size: 21px;
+                        }
+                    }
+
+                    @include media.tablet {
+                        height: 50px;
+
+                        img {
+                            width: 44px;
+                            height: 44px;
+                        }
+
+                        h2 {
+                            font-size: 20px;
+                        }
+                    }
+
+                    @include media.mobile {
+                        height: 50px;
+
+                        img {
+                            width: 44px;
+                            height: 44px;
+                        }
+
+                        h2 {
+                            font-size: 18px;
+                        }
+                    }
+
+                    @include media.mobile-s {
+                        height: 50px;
+
+                        img {
+                            width: 35px;
+                            height: 35px;
+                        }
+
+                        h2 {
+                            font-size: 16px;
+                        }
+                    }
+
+                }
+
+                /* body + adaptive.v */
+                div.body-form {
+
+                    form {
+                        @include m.d-flex (flex, flex-start, center);
+                        flex-direction: column;
+                        width: 100%;
+                        height: max-content;
+                        border-bottom: 1px solid v.$FFF-65;
+
+
+                        input {
+                            color: v.$FFF-85;
+                            border: 1px solid v.$FFF-65;
+                            background-color: v.$black-65;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+                            &:focus {
+                                cursor: text;
+                                border: 0px;
+                            }
+
+                            &::placeholder {
+                                color: v.$FFF-35;
+                                text-align: start;
+                            }
+                        }
+                    }
+
+
+                    @include media.desktop-xl {
+                        form {
+
+                            input {
+                                padding-left: 20px;
+                                border-radius: 50px;
+                                margin-top: 40px;
+                                width: 500px;
+                                height: 60px;
+
+                                &[type="password"] {
+                                    margin-bottom: 30px;
+                                }
+
+                                &:focus {
+                                    box-shadow: 0px 0px 15px 5px v.$FFF-75;
+                                }
+
+                                &::placeholder {
+                                    font-weight: 600;
+                                    letter-spacing: 4px;
+                                    font-size: 22px;
+                                }
+                            }
+                        }
+                    }
+
+                    @include media.desktop-l {
+                        form {
+
+                            input {
+                                padding-left: 15px;
+                                border-radius: 50px;
+                                margin-top: 40px;
+                                width: 420px;
+                                height: 50px;
+
+                                &[type="password"] {
+                                    margin-bottom: 30px;
+                                }
+
+                                &:focus {
+                                    box-shadow: 0px 0px 15px 5px v.$FFF-75;
+                                }
+
+                                &::placeholder {
+                                    font-weight: 600;
+                                    letter-spacing: 2px;
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+
+                    @include media.desktop-s {
+                        form {
+
+                            input {
+                                padding-left: 10px;
+                                border-radius: 20px;
+                                margin-top: 25px;
+                                width: 350px;
+                                height: 35px;
+
+                                &[type="password"] {
+                                    margin-bottom: 30px;
+                                }
+
+                                &:focus {
+                                    box-shadow: 0px 0px 13px 2px v.$FFF-75;
+                                }
+
+                                &::placeholder {
+                                    font-weight: 600;
+                                    letter-spacing: 2px;
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+
+                    @include media.tablet {
+                        form {
+
+                            input {
+                                padding-left: 10px;
+                                border-radius: 20px;
+                                font-size: 15px;
+                                margin-top: 20px;
+                                width: 330px;
+                                height: 35px;
+
+                                &[type="password"] {
+                                    margin-bottom: 30px;
+                                }
+
+                                &:focus {
+                                    box-shadow: 0px 0px 13px 2px v.$FFF-75;
+                                }
+
+                                &::placeholder {
+                                    font-weight: normal;
+                                    letter-spacing: 2px;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+
+                    @include media.mobile {
+                        form {
+
+                            input {
+                                padding-left: 10px;
+                                border-radius: 15px;
+                                font-size: 14px;
+                                margin-top: 15px;
+                                width: 250px;
+                                height: 30px;
+
+                                &[type="password"] {
+                                    margin-bottom: 30px;
+                                }
+
+                                &:focus {
+                                    box-shadow: 0px 0px 13px 2px v.$FFF-75;
+                                }
+
+                                &::placeholder {
+                                    font-weight: normal;
+                                    letter-spacing: 2px;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+
+                    @include media.mobile-s {
+
+                        form {
+
+                            input {
+                                padding-left: 10px;
+                                border-radius: 15px;
+                                margin-top: 15px;
+                                width: 200px;
+                                height: 30px;
+
+                                &[type="password"] {
+                                    margin-bottom: 30px;
+                                }
+
+                                &:focus {
+                                    box-shadow: 0px 0px 10px 2px v.$FFF-75;
+                                }
+
+                                &::placeholder {
+                                    font-weight: normal;
+                                    letter-spacing: 2px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                /* footer + adaptive.v */
+                div.footer-form {
+                    height: max-content;
+                    @include m.d-flex (flex, flex-start, center);
+                    flex-direction: column;
+
+                    button {
+                        color: v.$FFF-85;
+                        border: 1px solid v.$FFF-65;
+                        font-family: 'Allerta', sans-serif;
+                        background-color: v.$black-65;
+                        text-align: center;
+
+                        &:hover {
+                            cursor: pointer;
+                            color: v.$A8-100;
+                        }
+                    }
+
+                    p.donT_have-acc {
+                        color: v.$FFF-85;
+                    }
+
+                    a[title="support-link"],
+                    a[title="donT_have-acc"] {
+                        color: v.$FFF-85;
+                        text-decoration: underline 1px solid v.$FFF-75;
+                        text-underline-offset: 2px;
+
+                        &:hover {
+                            transition: all 0.3s;
+                            color: v.$A8-100;
+                            text-decoration: underline 1px solid v.$A8-100;
+                        }
+                    }
+
+
+                    @include media.desktop-xl {
+
+                        button,
+                        a[title="support-link"],
+                        p.donT_have-acc {
+                            margin-top: 25px;
+                        }
+
+                        button {
+                            letter-spacing: 2px;
+                            border-radius: 50px;
+                            width: 300px;
+                            height: 60px;
+                            font-size: 26px;
+                        }
+
+                        p.donT_have-acc {
+                            font-size: 24px;
+                            letter-spacing: 2px;
+                        }
+
+                        a[title="support-link"] {
+                            letter-spacing: 2px;
+                            font-size: 22px;
+                        }
+                    }
+
+                    @include media.desktop-l {
+
+                        button,
+                        a[title="support-link"],
+                        p.donT_have-acc {
+                            margin-top: 15px;
+                        }
+
+                        button {
+                            letter-spacing: 1px;
+                            border-radius: 22px;
+                            width: 220px;
+                            height: 50px;
+                            font-size: 22px;
+                        }
+
+                        p.donT_have-acc {
+                            font-size: 21px;
+                            letter-spacing: 2px;
+                        }
+
+                        a[title="support-link"] {
+                            letter-spacing: 2px;
+                            font-size: 19px;
+                        }
+                    }
+
+                    @include media.desktop-s {
+
+                        button,
+                        a[title="support-link"],
+                        p.donT_have-acc {
+                            margin-top: 15px;
+                        }
+
+                        button {
+                            letter-spacing: 1px;
+                            border-radius: 15px;
+                            width: 200px;
+                            height: 40px;
+                            font-size: 18px;
+                        }
+
+                        p.donT_have-acc {
+                            font-size: 17px;
+                            letter-spacing: 2px;
+                        }
+
+                        a[title="support-link"] {
+                            letter-spacing: 1px;
+                            font-size: 16px;
+                        }
+                    }
+
+                    @include media.tablet {
+
+                        button,
+                        a[title="support-link"],
+                        p.donT_have-acc {
+                            margin-top: 15px;
+                        }
+
+                        button {
+                            letter-spacing: 0px;
+                            border-radius: 15px;
+                            width: 110px;
+                            height: 35px;
+                            font-size: 17px;
+                        }
+
+                        p.donT_have-acc {
+                            font-size: 16px;
+                            letter-spacing: 2px;
+                        }
+
+                        a[title="support-link"] {
+                            letter-spacing: 1px;
+                            font-size: 15px;
+                        }
+                    }
+
+                    @include media.mobile {
+
+                        button,
+                        a[title="support-link"],
+                        p.donT_have-acc {
+                            margin-top: 15px;
+                        }
+
+                        button {
+                            letter-spacing: 0px;
+                            border-radius: 15px;
+                            width: 100px;
+                            height: 30px;
+                            font-size: 16px;
+                        }
+
+                        p.donT_have-acc {
+                            font-size: 15px;
+                            letter-spacing: 1px;
+                        }
+
+                        a[title="support-link"] {
+                            letter-spacing: 0px;
+                            font-size: 14px;
+                        }
+
+                    }
+
+                    @include media.mobile-s {
+
+                        button,
+                        a[title="support-link"],
+                        p.donT_have-acc {
+                            margin-top: 15px;
+                        }
+
+                        button {
+                            letter-spacing: 0px;
+                            border-radius: 15px;
+                            width: 100px;
+                            height: 30px;
+                            font-size: 15px;
+                        }
+
+                        p.donT_have-acc {
+                            font-size: 14px;
+                            letter-spacing: 1px;
+                        }
+
+                        a[title="support-link"] {
+                            letter-spacing: 0px;
+                            font-size: 13px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

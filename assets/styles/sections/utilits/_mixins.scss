@@ -1,0 +1,47 @@
+@mixin jb-gradient {
+    background: linear-gradient(144deg,
+            #ffffff 0%,
+            #ffcaca 30%,
+            #edb0b0 65%,
+            #ffe5e5 65%,
+            #fc0000 100%);
+};
+
+@mixin en-gradient {
+    background: linear-gradient(144deg,
+            #ffffff 0%,
+            #878787 65%,
+            #5c5c5c 65%,
+            #4b4b4b 100%);
+};
+
+@mixin nc-gradient {
+    background: linear-gradient(144deg,
+            #71A2FF 0%,
+            #3b99e7 65%,
+            #00a887 65%,
+            #5bffbb 100%);
+};
+
+@mixin d-flex ($display: block, $justify: center, $items: center,
+    $wrap: nowrap, $direction: row, $colimn-gap: 0, $row-gap: 0) 
+ {
+    display: $display;
+    justify-content: $justify;
+    align-items: $items;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+    column-gap: $colimn-gap;
+    row-gap: $row-gap;
+};
+
+@mixin evenLvL-element ($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin inp-style {
+    font-family: 'Allerta', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+}

@@ -1,0 +1,1158 @@
+@font-face {
+  font-family: "Allerta";
+  src: url("../../fonts/Allerta-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Allerta", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+li {
+  list-style: none;
+}
+
+figure, blockquote {
+  margin: 0;
+}
+
+hr {
+  margin: 0;
+  width: 100%;
+}
+
+input {
+  outline: 0;
+  border: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- [THIS STYLED reg-form]
+
+/* [!] = @include media.desktop and other = adaptive.v */
+/* [ENG] style background */
+html.regPage body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0.7)), url(../../media/main-bg.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* [ENG] style main-conteiner = [main] + adaptive.v */
+}
+html.regPage body main {
+  /* 3549.98px */
+  /* 2559.98px */
+  /* 1399.98px */
+  /* 1023.98px */
+  /* 768.98px */
+  /* 575.98px */
+  /* wrapper-box */
+}
+@media (max-width: 3549.98px) {
+  html.regPage body main {
+    width: 640px;
+    height: 860px;
+  }
+}
+@media (max-width: 2559.98px) {
+  html.regPage body main {
+    width: 500px;
+    height: 720px;
+  }
+}
+@media (max-width: 1399.98px) {
+  html.regPage body main {
+    width: 420px;
+    height: 530px;
+  }
+}
+@media (max-width: 1023.98px) {
+  html.regPage body main {
+    width: 400px;
+    height: 480px;
+  }
+}
+@media (max-width: 768.98px) {
+  html.regPage body main {
+    width: 350px;
+    height: 430px;
+  }
+}
+@media (max-width: 575.98px) {
+  html.regPage body main {
+    width: 240px;
+    height: 420px;
+  }
+}
+html.regPage body main div.wrapper {
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(35px);
+          backdrop-filter: blur(35px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  width: 100%;
+  height: 100%;
+  /* head + adaptive.v */
+  /* body + adaptive.v */
+  /* footer + adaptive.v */
+}
+html.regPage body main div.wrapper div.header-form,
+html.regPage body main div.wrapper div.body-form,
+html.regPage body main div.wrapper div.footer-form {
+  display: flex;
+}
+html.regPage body main div.wrapper div.header-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 25px 25px 0px 0px;
+}
+html.regPage body main div.wrapper div.header-form img {
+  -webkit-user-drag: none;
+}
+html.regPage body main div.wrapper div.header-form h2 {
+  color: rgba(0, 0, 0, 0.75);
+  letter-spacing: 5px;
+}
+@media (max-width: 3549.98px) {
+  html.regPage body main div.wrapper div.header-form {
+    height: 90px;
+  }
+  html.regPage body main div.wrapper div.header-form img {
+    width: 75px;
+    height: 75px;
+  }
+  html.regPage body main div.wrapper div.header-form h2 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 2559.98px) {
+  html.regPage body main div.wrapper div.header-form {
+    height: 70px;
+  }
+  html.regPage body main div.wrapper div.header-form img {
+    width: 60px;
+    height: 60px;
+  }
+  html.regPage body main div.wrapper div.header-form h2 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 1399.98px) {
+  html.regPage body main div.wrapper div.header-form {
+    height: 55px;
+  }
+  html.regPage body main div.wrapper div.header-form img {
+    width: 44px;
+    height: 44px;
+  }
+  html.regPage body main div.wrapper div.header-form h2 {
+    font-size: 21px;
+  }
+}
+@media (max-width: 1023.98px) {
+  html.regPage body main div.wrapper div.header-form {
+    height: 50px;
+  }
+  html.regPage body main div.wrapper div.header-form img {
+    width: 44px;
+    height: 44px;
+  }
+  html.regPage body main div.wrapper div.header-form h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768.98px) {
+  html.regPage body main div.wrapper div.header-form {
+    height: 50px;
+  }
+  html.regPage body main div.wrapper div.header-form img {
+    width: 44px;
+    height: 44px;
+  }
+  html.regPage body main div.wrapper div.header-form h2 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 575.98px) {
+  html.regPage body main div.wrapper div.header-form {
+    height: 50px;
+  }
+  html.regPage body main div.wrapper div.header-form img {
+    width: 35px;
+    height: 35px;
+  }
+  html.regPage body main div.wrapper div.header-form h2 {
+    font-size: 16px;
+  }
+}
+html.regPage body main div.wrapper div.body-form form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  flex-direction: column;
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+}
+html.regPage body main div.wrapper div.body-form form input {
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background-color: rgba(0, 0, 0, 0.65);
+}
+html.regPage body main div.wrapper div.body-form form input:hover {
+  cursor: pointer;
+}
+html.regPage body main div.wrapper div.body-form form input:focus {
+  cursor: text;
+  border: 0px;
+}
+html.regPage body main div.wrapper div.body-form form input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  text-align: start;
+}
+html.regPage body main div.wrapper div.body-form form input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  text-align: start;
+}
+@media (max-width: 3549.98px) {
+  html.regPage body main div.wrapper div.body-form form input {
+    padding-left: 20px;
+    margin-top: 40px;
+    border-radius: 50px;
+    width: 500px;
+    height: 60px;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=text], html.regPage body main div.wrapper div.body-form form input[type=password], html.regPage body main div.wrapper div.body-form form input[type=email] {
+    font-size: 21px;
+    letter-spacing: 3px;
+    font-weight: 600;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=email] {
+    margin-bottom: 30px;
+  }
+  html.regPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.75);
+  }
+  html.regPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 22px;
+  }
+  html.regPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 2559.98px) {
+  html.regPage body main div.wrapper div.body-form form input {
+    padding-left: 15px;
+    margin-top: 40px;
+    border-radius: 50px;
+    width: 420px;
+    height: 50px;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=text], html.regPage body main div.wrapper div.body-form form input[type=password], html.regPage body main div.wrapper div.body-form form input[type=email] {
+    font-size: 17px;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=email] {
+    margin-bottom: 30px;
+  }
+  html.regPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.75);
+  }
+  html.regPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 18px;
+  }
+  html.regPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 1399.98px) {
+  html.regPage body main div.wrapper div.body-form form input {
+    padding-left: 10px;
+    margin-top: 25px;
+    border-radius: 15px;
+    width: 350px;
+    height: 35px;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=text], html.regPage body main div.wrapper div.body-form form input[type=password], html.regPage body main div.wrapper div.body-form form input[type=email] {
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=email] {
+    margin-bottom: 25px;
+  }
+  html.regPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 13px 2px rgba(255, 255, 255, 0.75);
+  }
+  html.regPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 15px;
+  }
+  html.regPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 1023.98px) {
+  html.regPage body main div.wrapper div.body-form form input {
+    padding-left: 10px;
+    margin-top: 20px;
+    border-radius: 15px;
+    width: 330px;
+    height: 35px;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=text], html.regPage body main div.wrapper div.body-form form input[type=password], html.regPage body main div.wrapper div.body-form form input[type=email] {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: normal;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=email] {
+    margin-bottom: 20px;
+  }
+  html.regPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 13px 2px rgba(255, 255, 255, 0.75);
+  }
+  html.regPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+  html.regPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 768.98px) {
+  html.regPage body main div.wrapper div.body-form form input {
+    padding-left: 10px;
+    margin-top: 15px;
+    width: 250px;
+    height: 30px;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=text], html.regPage body main div.wrapper div.body-form form input[type=password], html.regPage body main div.wrapper div.body-form form input[type=email] {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: normal;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=email] {
+    margin-bottom: 20px;
+  }
+  html.regPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 13px 2px rgba(255, 255, 255, 0.75);
+  }
+  html.regPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+  html.regPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 575.98px) {
+  html.regPage body main div.wrapper div.body-form form input {
+    padding-left: 10px;
+    border-radius: 15px;
+    margin-top: 15px;
+    width: 200px;
+    height: 30px;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=text], html.regPage body main div.wrapper div.body-form form input[type=password], html.regPage body main div.wrapper div.body-form form input[type=email] {
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: normal;
+  }
+  html.regPage body main div.wrapper div.body-form form input[type=email] {
+    margin-bottom: 15px;
+  }
+  html.regPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.75);
+  }
+  html.regPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 12px;
+  }
+  html.regPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 12px;
+  }
+}
+html.regPage body main div.wrapper div.footer-form {
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  flex-direction: column;
+}
+html.regPage body main div.wrapper div.footer-form button {
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  font-family: "Allerta", sans-serif;
+  background-color: rgba(0, 0, 0, 0.65);
+  text-align: center;
+}
+html.regPage body main div.wrapper div.footer-form button:hover {
+  cursor: pointer;
+  color: rgb(138, 138, 138);
+}
+html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+  color: rgba(255, 255, 255, 0.85);
+}
+html.regPage body main div.wrapper div.footer-form a[title=support-link],
+html.regPage body main div.wrapper div.footer-form a[title=ihave-acc] {
+  color: rgba(255, 255, 255, 0.85);
+  -webkit-text-decoration: underline 1px solid rgba(255, 255, 255, 0.75);
+          text-decoration: underline 1px solid rgba(255, 255, 255, 0.75);
+  text-underline-offset: 2px;
+}
+html.regPage body main div.wrapper div.footer-form a[title=support-link]:hover,
+html.regPage body main div.wrapper div.footer-form a[title=ihave-acc]:hover {
+  transition: all 0.3s;
+  color: rgb(138, 138, 138);
+  -webkit-text-decoration: underline 1px solid rgb(138, 138, 138);
+          text-decoration: underline 1px solid rgb(138, 138, 138);
+}
+@media (max-width: 3549.98px) {
+  html.regPage body main div.wrapper div.footer-form button,
+  html.regPage body main div.wrapper div.footer-form a[title=support-link],
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    margin-top: 28px;
+  }
+  html.regPage body main div.wrapper div.footer-form button {
+    letter-spacing: 2px;
+    border-radius: 50px;
+    width: 320px;
+    height: 60px;
+    font-size: 26px;
+  }
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  html.regPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 2px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 2559.98px) {
+  html.regPage body main div.wrapper div.footer-form button,
+  html.regPage body main div.wrapper div.footer-form a[title=support-link],
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    margin-top: 15px;
+  }
+  html.regPage body main div.wrapper div.footer-form button {
+    letter-spacing: 1px;
+    border-radius: 50px;
+    width: 250px;
+    height: 50px;
+    font-size: 22px;
+  }
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+  html.regPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 2px;
+    font-size: 19px;
+  }
+}
+@media (max-width: 1399.98px) {
+  html.regPage body main div.wrapper div.footer-form button,
+  html.regPage body main div.wrapper div.footer-form a[title=support-link],
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    margin-top: 15px;
+  }
+  html.regPage body main div.wrapper div.footer-form button {
+    letter-spacing: 1px;
+    border-radius: 15px;
+    width: 210px;
+    height: 40px;
+    font-size: 18px;
+  }
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    font-size: 17px;
+    letter-spacing: 2px;
+  }
+  html.regPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 1023.98px) {
+  html.regPage body main div.wrapper div.footer-form button,
+  html.regPage body main div.wrapper div.footer-form a[title=support-link],
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    margin-top: 15px;
+  }
+  html.regPage body main div.wrapper div.footer-form button {
+    letter-spacing: 0px;
+    border-radius: 15px;
+    width: 190px;
+    height: 35px;
+    font-size: 17px;
+  }
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  html.regPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 1px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 768.98px) {
+  html.regPage body main div.wrapper div.footer-form button,
+  html.regPage body main div.wrapper div.footer-form a[title=support-link],
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    margin-top: 15px;
+  }
+  html.regPage body main div.wrapper div.footer-form button {
+    letter-spacing: 0px;
+    border-radius: 15px;
+    width: 180px;
+    height: 30px;
+    font-size: 16px;
+  }
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  html.regPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 0px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 575.98px) {
+  html.regPage body main div.wrapper div.footer-form button,
+  html.regPage body main div.wrapper div.footer-form a[title=support-link],
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    margin-top: 15px;
+  }
+  html.regPage body main div.wrapper div.footer-form button {
+    letter-spacing: 0px;
+    border-radius: 15px;
+    width: 180px;
+    height: 30px;
+    font-size: 15px;
+  }
+  html.regPage body main div.wrapper div.footer-form p.ihave-acc {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  html.regPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 0px;
+    font-size: 13px;
+  }
+}
+
+/* ---- [THIS STYLED auth-form]
+/* [!] = @include media.desktop and other = adaptive.v */
+html.authPage body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0.7)), url(../../media/main-bg.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* [ENG] style main-conteiner = [main] + adaptive.v */
+}
+html.authPage body main {
+  /* 3549.98px */
+  /* 2559.98px */
+  /* 1399.98px */
+  /* 1023.98px */
+  /* 768.98px */
+  /* 575.98px */
+  /* wrapper-box */
+}
+@media (max-width: 3549.98px) {
+  html.authPage body main {
+    width: 640px;
+    height: 560px;
+  }
+}
+@media (max-width: 2559.98px) {
+  html.authPage body main {
+    width: 500px;
+    height: 460px;
+  }
+}
+@media (max-width: 1399.98px) {
+  html.authPage body main {
+    width: 420px;
+    height: 380px;
+  }
+}
+@media (max-width: 1023.98px) {
+  html.authPage body main {
+    width: 400px;
+    height: 360px;
+  }
+}
+@media (max-width: 768.98px) {
+  html.authPage body main {
+    width: 350px;
+    height: 320px;
+  }
+}
+@media (max-width: 575.98px) {
+  html.authPage body main {
+    width: 240px;
+    height: 320px;
+  }
+}
+html.authPage body main div.wrapper {
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(35px);
+          backdrop-filter: blur(35px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  width: 100%;
+  height: 100%;
+  /* head + adaptive.v */
+  /* body + adaptive.v */
+  /* footer + adaptive.v */
+}
+html.authPage body main div.wrapper div.header-form,
+html.authPage body main div.wrapper div.body-form,
+html.authPage body main div.wrapper div.footer-form {
+  display: flex;
+}
+html.authPage body main div.wrapper div.header-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 25px 25px 0px 0px;
+}
+html.authPage body main div.wrapper div.header-form img {
+  -webkit-user-drag: none;
+}
+html.authPage body main div.wrapper div.header-form h2 {
+  color: rgba(0, 0, 0, 0.75);
+  letter-spacing: 5px;
+}
+@media (max-width: 3549.98px) {
+  html.authPage body main div.wrapper div.header-form {
+    height: 90px;
+  }
+  html.authPage body main div.wrapper div.header-form img {
+    width: 75px;
+    height: 75px;
+  }
+  html.authPage body main div.wrapper div.header-form h2 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 2559.98px) {
+  html.authPage body main div.wrapper div.header-form {
+    height: 70px;
+  }
+  html.authPage body main div.wrapper div.header-form img {
+    width: 60px;
+    height: 60px;
+  }
+  html.authPage body main div.wrapper div.header-form h2 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 1399.98px) {
+  html.authPage body main div.wrapper div.header-form {
+    height: 55px;
+  }
+  html.authPage body main div.wrapper div.header-form img {
+    width: 44px;
+    height: 44px;
+  }
+  html.authPage body main div.wrapper div.header-form h2 {
+    font-size: 21px;
+  }
+}
+@media (max-width: 1023.98px) {
+  html.authPage body main div.wrapper div.header-form {
+    height: 50px;
+  }
+  html.authPage body main div.wrapper div.header-form img {
+    width: 44px;
+    height: 44px;
+  }
+  html.authPage body main div.wrapper div.header-form h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768.98px) {
+  html.authPage body main div.wrapper div.header-form {
+    height: 50px;
+  }
+  html.authPage body main div.wrapper div.header-form img {
+    width: 44px;
+    height: 44px;
+  }
+  html.authPage body main div.wrapper div.header-form h2 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 575.98px) {
+  html.authPage body main div.wrapper div.header-form {
+    height: 50px;
+  }
+  html.authPage body main div.wrapper div.header-form img {
+    width: 35px;
+    height: 35px;
+  }
+  html.authPage body main div.wrapper div.header-form h2 {
+    font-size: 16px;
+  }
+}
+html.authPage body main div.wrapper div.body-form form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  flex-direction: column;
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+}
+html.authPage body main div.wrapper div.body-form form input {
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background-color: rgba(0, 0, 0, 0.65);
+}
+html.authPage body main div.wrapper div.body-form form input:hover {
+  cursor: pointer;
+}
+html.authPage body main div.wrapper div.body-form form input:focus {
+  cursor: text;
+  border: 0px;
+}
+html.authPage body main div.wrapper div.body-form form input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  text-align: start;
+}
+html.authPage body main div.wrapper div.body-form form input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  text-align: start;
+}
+@media (max-width: 3549.98px) {
+  html.authPage body main div.wrapper div.body-form form input {
+    padding-left: 20px;
+    border-radius: 50px;
+    margin-top: 40px;
+    width: 500px;
+    height: 60px;
+  }
+  html.authPage body main div.wrapper div.body-form form input[type=password] {
+    margin-bottom: 30px;
+  }
+  html.authPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.75);
+  }
+  html.authPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 22px;
+  }
+  html.authPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 2559.98px) {
+  html.authPage body main div.wrapper div.body-form form input {
+    padding-left: 15px;
+    border-radius: 50px;
+    margin-top: 40px;
+    width: 420px;
+    height: 50px;
+  }
+  html.authPage body main div.wrapper div.body-form form input[type=password] {
+    margin-bottom: 30px;
+  }
+  html.authPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.75);
+  }
+  html.authPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 18px;
+  }
+  html.authPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 1399.98px) {
+  html.authPage body main div.wrapper div.body-form form input {
+    padding-left: 10px;
+    border-radius: 20px;
+    margin-top: 25px;
+    width: 350px;
+    height: 35px;
+  }
+  html.authPage body main div.wrapper div.body-form form input[type=password] {
+    margin-bottom: 30px;
+  }
+  html.authPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 13px 2px rgba(255, 255, 255, 0.75);
+  }
+  html.authPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 15px;
+  }
+  html.authPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 1023.98px) {
+  html.authPage body main div.wrapper div.body-form form input {
+    padding-left: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin-top: 20px;
+    width: 330px;
+    height: 35px;
+  }
+  html.authPage body main div.wrapper div.body-form form input[type=password] {
+    margin-bottom: 30px;
+  }
+  html.authPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 13px 2px rgba(255, 255, 255, 0.75);
+  }
+  html.authPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+  html.authPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 768.98px) {
+  html.authPage body main div.wrapper div.body-form form input {
+    padding-left: 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    margin-top: 15px;
+    width: 250px;
+    height: 30px;
+  }
+  html.authPage body main div.wrapper div.body-form form input[type=password] {
+    margin-bottom: 30px;
+  }
+  html.authPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 13px 2px rgba(255, 255, 255, 0.75);
+  }
+  html.authPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+  html.authPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 575.98px) {
+  html.authPage body main div.wrapper div.body-form form input {
+    padding-left: 10px;
+    border-radius: 15px;
+    margin-top: 15px;
+    width: 200px;
+    height: 30px;
+  }
+  html.authPage body main div.wrapper div.body-form form input[type=password] {
+    margin-bottom: 30px;
+  }
+  html.authPage body main div.wrapper div.body-form form input:focus {
+    box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.75);
+  }
+  html.authPage body main div.wrapper div.body-form form input::-moz-placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 12px;
+  }
+  html.authPage body main div.wrapper div.body-form form input::placeholder {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 12px;
+  }
+}
+html.authPage body main div.wrapper div.footer-form {
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  flex-direction: column;
+}
+html.authPage body main div.wrapper div.footer-form button {
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  font-family: "Allerta", sans-serif;
+  background-color: rgba(0, 0, 0, 0.65);
+  text-align: center;
+}
+html.authPage body main div.wrapper div.footer-form button:hover {
+  cursor: pointer;
+  color: rgb(138, 138, 138);
+}
+html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+  color: rgba(255, 255, 255, 0.85);
+}
+html.authPage body main div.wrapper div.footer-form a[title=support-link],
+html.authPage body main div.wrapper div.footer-form a[title=donT_have-acc] {
+  color: rgba(255, 255, 255, 0.85);
+  -webkit-text-decoration: underline 1px solid rgba(255, 255, 255, 0.75);
+          text-decoration: underline 1px solid rgba(255, 255, 255, 0.75);
+  text-underline-offset: 2px;
+}
+html.authPage body main div.wrapper div.footer-form a[title=support-link]:hover,
+html.authPage body main div.wrapper div.footer-form a[title=donT_have-acc]:hover {
+  transition: all 0.3s;
+  color: rgb(138, 138, 138);
+  -webkit-text-decoration: underline 1px solid rgb(138, 138, 138);
+          text-decoration: underline 1px solid rgb(138, 138, 138);
+}
+@media (max-width: 3549.98px) {
+  html.authPage body main div.wrapper div.footer-form button,
+  html.authPage body main div.wrapper div.footer-form a[title=support-link],
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    margin-top: 25px;
+  }
+  html.authPage body main div.wrapper div.footer-form button {
+    letter-spacing: 2px;
+    border-radius: 50px;
+    width: 300px;
+    height: 60px;
+    font-size: 26px;
+  }
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  html.authPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 2px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 2559.98px) {
+  html.authPage body main div.wrapper div.footer-form button,
+  html.authPage body main div.wrapper div.footer-form a[title=support-link],
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    margin-top: 15px;
+  }
+  html.authPage body main div.wrapper div.footer-form button {
+    letter-spacing: 1px;
+    border-radius: 22px;
+    width: 220px;
+    height: 50px;
+    font-size: 22px;
+  }
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+  html.authPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 2px;
+    font-size: 19px;
+  }
+}
+@media (max-width: 1399.98px) {
+  html.authPage body main div.wrapper div.footer-form button,
+  html.authPage body main div.wrapper div.footer-form a[title=support-link],
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    margin-top: 15px;
+  }
+  html.authPage body main div.wrapper div.footer-form button {
+    letter-spacing: 1px;
+    border-radius: 15px;
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+  }
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    font-size: 17px;
+    letter-spacing: 2px;
+  }
+  html.authPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 1023.98px) {
+  html.authPage body main div.wrapper div.footer-form button,
+  html.authPage body main div.wrapper div.footer-form a[title=support-link],
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    margin-top: 15px;
+  }
+  html.authPage body main div.wrapper div.footer-form button {
+    letter-spacing: 0px;
+    border-radius: 15px;
+    width: 110px;
+    height: 35px;
+    font-size: 17px;
+  }
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  html.authPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 1px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 768.98px) {
+  html.authPage body main div.wrapper div.footer-form button,
+  html.authPage body main div.wrapper div.footer-form a[title=support-link],
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    margin-top: 15px;
+  }
+  html.authPage body main div.wrapper div.footer-form button {
+    letter-spacing: 0px;
+    border-radius: 15px;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+  }
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  html.authPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 0px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 575.98px) {
+  html.authPage body main div.wrapper div.footer-form button,
+  html.authPage body main div.wrapper div.footer-form a[title=support-link],
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    margin-top: 15px;
+  }
+  html.authPage body main div.wrapper div.footer-form button {
+    letter-spacing: 0px;
+    border-radius: 15px;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+  }
+  html.authPage body main div.wrapper div.footer-form p.donT_have-acc {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  html.authPage body main div.wrapper div.footer-form a[title=support-link] {
+    letter-spacing: 0px;
+    font-size: 13px;
+  }
+}/*# sourceMappingURL=index.css.map */

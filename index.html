@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="regPage" lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="keywords" lang="ru" content="игровой клан кс2, ксго, персональный сайт">
+    <meta name="keywords" lang="en"
+        content="Oberon, oberon, counter-strike, cs2, csgo, NCR, NCoRe, NKSS, personal website, gaming clan">
+    <meta name="description" lang="ru" content="Страница входа на веб-ресурс Oberon, игровой клан, личный сайт клана">
+    <meta name="description" lang="en"
+        content="The login page to the Oberon web resource, the gaming clan, the clan personal website">
+    <meta name="author" content="Dmitriy-NCoRe">
+    <link rel="icon" sizes="128x128 64x64" href="./assets/icons/tab-icon.png">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/index-min-css/indexmin.css">
+    <title>Oberon | Добро пожаловать</title>
+</head>
+
+<body>
+    <!--[RU] - [index.html] -> это страница 'входа'-->
+    <!--[ENG] - [index.html] -> this is the login page-->
+
+    <main>
+        <!--wrapper-for-form-->
+        <div class="wrapper-regForm wrapper" id="reg-form">
+
+            <!--header-form-->
+            <div class="regForm__header header-form">
+                <img src="./assets/svg/Oberon_lg_1.svg" alt="oberon-logo" width="55" height="55" aria-label="img-logo">
+                <h2 aria-label="text-logo">OBERON</h2>
+            </div>
+
+            <!--body-form-->
+            <div class="regForm__body-form body-form">
+                <form action="#" method="post" aria-label="registration form">
+                    <label for="user-login" aria-label="your login">
+                        <input id="user-login" type="text" name="user-login" placeholder="Login" required>
+                    </label>
+
+                    <label for="user-name" aria-label="your userName">
+                        <input id="user-name" type="text" name="user-name" placeholder="Username" required>
+                    </label>
+
+                    <label for="user-pass" aria-label="your pass">
+                        <input id="user-pass" type="password" name="user-pass" placeholder="Password" required>
+                    </label>
+
+                    <label for="return-pass" aria-label="return pass">
+                        <input id="return-pass" type="password" name="return-pass" placeholder="return-Password"
+                            required>
+                    </label>
+
+                    <label for="e-mail" aria-label="your email">
+                        <input id="e-mail" type="email" name="e-mail" placeholder="e-mail" required>
+                    </label>
+                </form>
+            </div>
+
+            <!--footer-form-->
+            <div class="regForm__footer footer-form">
+                <button type="submit" aria-label="registration button">Зарегистрироваться</button>
+                <p class="ihave-acc" aria-label="i have account">У меня уже есть
+                    <a href="./loginPage-auth.html" lang="ru" title="ihave-acc">аккаунт</a>
+                </p>
+                <a href="#" aria-label="support link" title="support-link">Support / Help</a>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
