@@ -1,0 +1,60 @@
+@use 'sass:math';
+@use 'functions' as *;
+
+@mixin fluid-text($max: 48, $min: 16) {
+    font-size: fluid($max, $min);
+}
+
+@mixin hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@mixin show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@mixin flex ($display, $justify, $algin) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $algin;
+}
+
+@mixin bg-pages {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/bg-page.png),
+        linear-gradient(135deg,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.75) 100%);
+}
+
+@mixin one-size ($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+@mixin border-pack ($size, $type, $color) {
+    border: $size, $type, $color;
+}
+
+@mixin bg-gradient-eng {
+    background: linear-gradient(144deg, #ffffff 0%, #878787 65%, #5c5c5c 65%, #4b4b4b 100%);
+}
+
+@mixin bg-gradient-ymh {
+    background: linear-gradient(144deg, #71A2FF 0%, #3b99e7 65%, #00a887 65%, #5bffbb 100%);
+}
+
+@mixin bg-gradient-jbr {
+    background: linear-gradient(144deg, #ffffff 0%, #ffcaca 30%, #edb0b0 65%, #ffe5e5 65%, #fc0000 100%);
+}

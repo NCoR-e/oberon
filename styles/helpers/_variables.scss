@@ -1,0 +1,49 @@
+@use 'functions';
+
+:root {
+    --first-white-A100: rgba(255, 255, 255, 1.0);
+    --first-white-A85: rgba(255, 255, 255, 0.85);
+    --first-white-A75: rgba(255, 255, 255, 0.75);
+    --first-white-A50: rgba(255, 255, 255, 0.50);
+    --first-white-A35: rgba(255, 255, 255, 0.35);
+
+    --second-white-A75: rgba(233, 236, 239, 0.75);
+    --second-white-A50: rgba(233, 236, 239, 0.50);
+
+    --third-white-A75: rgba(217, 217, 217, 0.75);
+    --third-white-A50: rgba(217, 217, 217, 0.50);
+    --third-white-A35: rgba(217, 217, 217, 0.35);
+    --third-white-A15: rgba(217, 217, 217, 0.15);
+
+    --first-black-A75: rgba(0, 0, 0, 0.75);
+    --first-black-A50: rgba(0, 0, 0, 0.50);
+    --first-black-A35: rgba(0, 0, 0, 0.35);
+    --first-black-A15: rgba(0, 0, 0, 0.15);
+
+    --first-DarkGrey-A75: rgba(54, 54, 54, 0.75);
+    --first-DarkGrey-A50: rgba(54, 54, 54, 0.50);
+    --second-DarkGrey-A50: rgba(43, 43, 43, 0.5);
+
+    --first-LightGrey-A100: rgba(91, 91, 91, 1.0);
+    --first-LightGrey-A50: rgba(91, 91, 91, 0.50);
+    
+    --second-LightGrey-A100: rgba(80, 80, 80, 1.0);
+    --second-LightGrey-A65: rgba(80, 80, 80, 0.65);
+
+    --third-LightGrey-A100: rgba(72, 72, 72, 1.0);
+    --third-LightGrey-A50: rgba(72, 72, 72, 0.50);
+
+    --first-redA100: rgba(255, 0, 0, 0.50);
+
+    --first-green-A50: rgba(0, 255, 38, 0.50);
+
+    
+    --transition-time: 0.4s;
+
+    --accent-font:  28px;
+    --big-font:     22px;
+    --medium-font:  20px;
+    --default-font: 18px;
+    --small-font:   16px;
+    --xSmall-font:  14px;
+}

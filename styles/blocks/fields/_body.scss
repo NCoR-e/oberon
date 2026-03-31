@@ -1,0 +1,46 @@
+@use '../../helpers/' as *;
+
+.field {
+    position: relative;
+
+    &__input {
+        @include border-pack(1px, solid, var(--second-white-A75));
+        outline: 0;
+        border-radius: 4px;
+        letter-spacing: 2px;
+        padding-left: rem(10);
+        color: var(--first-white-A75);
+        transition: all var(--transition-time);
+        background-color: var(--third-LightGrey-A100);
+
+        @media (hover: hover) {
+            &:hover {
+                cursor: pointer;
+                background-color: var(--third-white-A15);
+            }
+
+            &:focus {
+                cursor: text;
+                background-color: var(--third-white-A15);
+            }
+        }
+    }
+
+    &__label {
+        position: absolute;
+        width: rem(180);
+        top: 50%;
+        left: 11px;
+        translate: 0 -50%;
+        color: var(--first-white-A35);
+        pointer-events: none;
+        transition: var(--transition-time);
+        letter-spacing: rem(2);
+    }
+
+    &:has(.field__input:not(:placeholder-shown)) &__label {
+        scale: 0.8;
+        translate: -1.8em -2.8em;
+        color: var(--first-white-A75);
+    }
+}

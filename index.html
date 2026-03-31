@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="NCoRe">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" sizes="512x512 256x256 128x128 64x64" href="./icons/general/tab-icon.png">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <script src="./scripts/main.js" type="module"></script>
+    <title>Oberon | Добро пожаловать</title>
+</head>
+
+<body>
+    <main class="login-page" aria-label="Login Page">
+        <div class="login-page__container">
+            <div class="login-page__wrapper-form --reg" aria-label="registration-form">
+                <header class="login-form__header">
+                    <div class="login-form__wrapper-logo">
+                        <img class="login-form__logo" src="./images/black-logo.png" alt="black-logo">
+                        <h1 class="login-form__title">OBERON</h1>
+                    </div>
+
+                    <nav class="login-form__panel" aria-label="input-selection">
+                        <button class="login-form__button button--switch" aria-label="reg-tab">Регистрация</button>
+                        <button class="login-form__button button--switch" aria-label="auth-tab">Авторизация</button>
+                    </nav>
+                </header>
+
+                <form class="login-form__form form">
+
+                    <div class="form__field field">
+                        <input class="field__input" id="reg-login" type="text" autocomplete="off" placeholder=" ">
+                        <label class="field__label" for="reg-login">Login</label>
+                    </div>
+
+                    <div class="form__field field">
+                        <label class="field__label" for="reg-name">Your Name</label>
+                        <input class="field__input" id="reg-name" type="text" autocomplete="off" placeholder=" ">
+                    </div>
+
+                    <div class="form__field field">
+                        <label class="field__label" for="reg-pass">Password</label>
+                        <input class="field__input" id="reg-pass" type="password" autocomplete="off" placeholder=" ">
+                    </div>
+
+                    <div class="form__field field">
+                        <label class="field__label" for="return-pass">Return Password</label>
+                        <input class="field__input" id="return-pass" type="password" autocomplete="off" placeholder=" ">
+                    </div>
+
+                    <div class="form__field field">
+                        <label class="field__label" for="reg-email">E-Mail</label>
+                        <input class="field__input" id="reg-email" type="email" autocomplete="off" placeholder=" ">
+                    </div>
+
+                    <button class="login-form button--primary">Зарегистрироваться</button>
+                </form>
+            </div>
+
+            <div class="login-page__wrapper-form --auth" aria-label="authorization-form" hidden>
+                <header class="login-form__header">
+                    <div class="login-form__wrapper-logo">
+                        <img class="login-form__logo" src="./images/black-logo.png" alt="black-logo">
+                        <h1 class="login-form__title">OBERON</h1>
+                    </div>
+
+                    <nav class="login-form__panel" aria-label="input-selection">
+                        <button class="login-form__button button--switch" aria-label="reg-tab">Регистрация</button>
+                        <button class="login-form__button button--switch" aria-label="auth-tab">Авторизация</button>
+                    </nav>
+                </header>
+
+                <form class="login-form__form form">
+                    <div class="form__field field">
+                        <label class="field__label" for="auth-login">Login</label>
+                        <input class="field__input" id="auth-login" type="text" autocomplete="off" placeholder=" ">
+                    </div>
+
+                    <div class="form__field field">
+                        <label class="field__label" for="auth-pass">Password</label>
+                        <input class="field__input" id="auth-pass" type="password" autocomplete="off" placeholder=" ">
+                    </div>
+
+                    <button class="login-form__button button--primary">Авторизоваться</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="login-form__support">
+            <button class="login-form__support button--action" href="#" title="Help" aria-label="support-link">
+                У меня возникли проблемы</button>
+        </div>
+    </main>
+</body>
+
+</html>

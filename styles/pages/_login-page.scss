@@ -1,0 +1,376 @@
+@use '../helpers/' as *;
+@use '../blocks/' as *;
+
+.login-page {
+    @include bg-pages;
+    @include abs-center;
+    @include flex(flex, center, center);
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+
+    @include mobile-xs {
+        background: linear-gradient(180deg,
+                rgba(217, 217, 217, 0.35) 0%,
+                rgba(132, 132, 132, 0.5) 10%,
+                rgba(71, 71, 71, 0.9) 35%,
+                #2b2b2b 75%);
+    }
+
+    @include mobile-above {
+        background: linear-gradient(180deg,
+                rgba(217, 217, 217, 0.35) 0%,
+                rgba(132, 132, 132, 0.5) 10%,
+                rgba(71, 71, 71, 0.9) 35%,
+                #2b2b2b 75%);
+    }
+
+    @include tablet-above {
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-image: url(../images/globals/bg-page.png),
+            linear-gradient(180deg,
+                rgba(217, 217, 217, 0.35) 0%,
+                rgba(132, 132, 132, 0.5) 10%,
+                rgba(71, 71, 71, 0.9) 35%,
+                #2b2b2b 75%);
+    }
+
+    &__container {
+        @include border-pack(2px, solid, var(--first-white-A75));
+        @include flex(flex, center, center);
+        margin: auto;
+        border-radius: 14px;
+        height: max-content;
+        backdrop-filter: blur(50px);
+
+        @include mobile-xs {
+            width: rem(280);
+        }
+
+        @include mobile-above {
+            width: rem(310);
+        }
+
+        @include tablet-above {
+            width: rem(460);
+        }
+
+        @include laptop-above {
+            width: rem(500);
+        }
+
+        @include desktop-xl-above {
+            width: rem(540);
+        }
+
+        @include ultra-wide {
+            width: rem(580);
+            border-radius: 12px;
+        }
+    }
+
+    &__wrapper-form {
+        &.--reg {
+            width: 100%;
+            height: max-content;
+        }
+
+        &.--auth {
+            width: 100%;
+            height: max-content;
+        }
+    }
+
+}
+
+.login-form {
+    &__header {
+        width: 100%;
+        height: max-content;
+    }
+
+    &__wrapper-logo {
+        @include flex(flex, center, center);
+        width: 100%;
+        height: rem(80);
+        border-radius: 11px 11px 0px 0px;
+        background-color: var(--first-white-A75);
+
+        @include mobile-xs {
+            height: rem(50);
+        }
+
+        @include mobile-above {
+            height: rem(60);
+        }
+
+        @include tablet-above {
+            height: rem(60);
+        }
+
+        @include laptop-above {
+            height: rem(60);
+        }
+    }
+
+    &__logo {
+        @include one-size(72px);
+
+        @include mobile-xs {
+            @include one-size(32px);
+        }
+
+        @include mobile-above {
+            @include one-size(48px);
+        }
+
+        @include tablet-above {
+            @include one-size(52px);
+        }
+
+        @include laptop-above {
+            @include one-size(52px);
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        font-family: "Allerta";
+        letter-spacing: 5px;
+        padding-left: rem(40);
+        font-size: var(--accent-font);
+        color: var(--first-black-A75);
+        text-shadow: 0px 4px 4px var(--first-black-A15);
+
+        @include mobile-xs {
+            padding-left: rem(20);
+            font-size: var(--default-font);
+        }
+
+        @include mobile-above {
+            padding-left: rem(20);
+            font-size: var(--medium-font);
+        }
+
+        @include tablet-above {
+            padding-left: rem(20);
+            font-size: var(--big-font);
+        }
+
+        @include laptop-above {
+            font-size: var(--big-font);
+        }
+    }
+
+    &__panel {
+        @include flex(flex, space-around, center);
+        width: 100%;
+        height: rem(60);
+        background-color: var(--second-DarkGrey-A50);
+        border-bottom: 1px solid var(--second-white-A50);
+
+        @include mobile-xs {
+            height: rem(50);
+        }
+
+        @include ultra-wide {
+            height: rem(80);
+        }
+
+        .button {
+            &--switch {
+                height: rem(40);
+                width: rem(200);
+                color: var(--first-white-A85);
+
+                @include mobile-xs {
+                    height: rem(30);
+                    width: rem(120);
+                    font-size: var(--xSmall-font);
+                }
+
+                @include mobile-above {
+                    height: rem(30);
+                    width: rem(140);
+                    font-size: var(--xSmall-font);
+                }
+
+                @include tablet-above {
+                    height: rem(35);
+                    width: rem(180);
+                    font-size: var(--small-font);
+                }
+
+                @include laptop-above {
+                    height: rem(35);
+                    font-size: var(--default-font);
+                }
+
+                @include desktop-xl-above {
+                    font-size: var(--medium-font);
+                }
+
+                @include ultra-wide {
+                    height: rem(45);
+                    width: rem(220);
+                    border-radius: 6px;
+                    font-size: var(--medium-font);
+                    letter-spacing: 3px;
+                }
+            }
+        }
+    }
+
+    &__form {
+        gap: rem(40);
+        padding: rem(30) 0 rem(30) 0;
+        border-radius: 0px 0px 13px 13px;
+
+        @include mobile-xs {
+            gap: rem(30);
+            border-radius: 0px 0px 11px 11px;
+        }
+
+        @include mobile-above {
+            gap: rem(30);
+            border-radius: 0px 0px 11px 11px;
+        }
+
+        @include tablet-above {
+            gap: rem(35);
+        }
+
+        @include ultra-wide {
+            gap: rem(50);
+
+            & button:last-child {
+                margin-top: rem(30);
+            }
+        }
+
+        input {
+            width: rem(420);
+            height: rem(50);
+
+            &::placeholder {
+                opacity: 0;
+            }
+
+            @include mobile-xs {
+                height: rem(35);
+                width: rem(240);
+                padding-left: rem(5);
+            }
+
+            @include mobile-above {
+                height: rem(40);
+                width: rem(280);
+            }
+
+            @include tablet-above {
+                height: rem(40);
+                width: rem(380);
+            }
+
+            @include laptop-above {
+                height: rem(40);
+            }
+
+            @include desktop-xl-above {
+                width: rem(480);
+            }
+
+            @include ultra-wide {
+                width: rem(500);
+                padding-left: rem(15);
+                border-radius: 7px;
+                letter-spacing: 2px;
+            }
+        }
+
+
+        button {
+            width: rem(300);
+            height: rem(50);
+            color: var(--first-white-A85);
+
+            @include mobile-xs {
+                width: rem(180);
+                height: rem(35);
+                font-size: var(--xSmall-font);
+            }
+
+            @include mobile-above {
+                width: rem(220);
+                height: rem(40);
+                font-size: var(--small-font);
+            }
+
+            @include tablet-above {
+                width: rem(220);
+                height: rem(40);
+                font-size: var(--small-font);
+            }
+
+            @include laptop-above {
+                width: rem(240);
+                font-size: var(--default-font);
+            }
+
+            @include desktop-xl-above {
+                font-size: var(--medium-font);
+            }
+
+            @include ultra-wide {
+                font-size: var(--big-font);
+            }
+        }
+    }
+
+    &__support {
+        @include flex(flex, center, center);
+        width: max-content;
+        height: rem(55);
+        margin-bottom: 0;
+
+        &.button--action {
+            width: max-content;
+            height: max-content;
+            padding: 10px;
+            backdrop-filter: blur(100px);
+            color: var(--first-white-A85);
+
+            @include mobile-xs {
+                letter-spacing: rem(1);
+                backdrop-filter: blur(0px);
+                font-size: var(--xSmall-font);
+                padding: 5px;
+            }
+
+            @include mobile-above {
+                backdrop-filter: blur(0px);
+                font-size: var(--xSmall-font);
+            }
+
+            @include tablet-above {
+                backdrop-filter: blur(0px);
+                font-size: var(--xSmall-font);
+            }
+
+            @include laptop-above {
+                font-size: var(--small-font);
+            }
+
+            @include desktop-xl-above {
+                font-size: var(--small-font);
+            }
+
+            @include ultra-wide {
+                font-size: var(--medium-font);
+                height: rem(50);
+            }
+        }
+    }
+}
