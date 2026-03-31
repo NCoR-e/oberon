@@ -1,0 +1,12 @@
+Copyright & Intellectual Property Notice
+
+All software code, design, and content of the project "Oberon" are the exclusive intellectual property of HVR Group.
+
+Ownership: This work is protected by international copyright laws, including the WIPO Copyright Treaty (WCT) and the Berne Convention.
+
+Restrictions: Any unauthorized copying, modification, or distribution of this source code, in whole or in part, for the purpose of obtaining commercial advantage or private financial gain by third parties is strictly prohibited.
+
+GitHub Policy: In accordance with GitHub Terms of Service, users are granted the right to view and fork this repository for personal/non-commercial use within the GitHub platform only. 
+This does not constitute a transfer of any intellectual property rights or a license for commercial exploitation.
+
+© 2025 HVR Group | All rights reserved.
