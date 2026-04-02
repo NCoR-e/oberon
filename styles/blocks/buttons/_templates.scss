@@ -4,20 +4,17 @@
     &--primary {
         @include border-pack(1px, solid, var(--second-white-A75));
         background-color: var(--second-DarkGrey-A50);
-        font-size: var(--small-font);
         border-radius: 5px;
     }
 
     &--switch {
         @include border-pack(1px, solid, var(--second-white-A75));
-        font-size: var(--small-font);
         border-radius: 5px;
     }
 
     &--action {
         @include border-pack(1px, solid, var(--second-white-A75));
         background-color: var(--first-black-A35);
-        font-size: var(--small-font);
         border-radius: 5px;
     }
 }

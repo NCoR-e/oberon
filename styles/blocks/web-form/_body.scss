@@ -2,9 +2,8 @@
 
 .form {
     @include flex(flex, center, center);
-    width: max-content;
+    width: 100%;
     height: max-content;
-    gap: rem(40);
     flex-direction: column;
     background-color: var(--first-DarkGrey-A75);
 }

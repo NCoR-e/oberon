@@ -15,51 +15,58 @@
 <body>
     <main class="login-page" aria-label="Login Page">
         <div class="login-page__container" data-js-container-form>
-            <div class="login-page__wrapper-form is-active --reg" aria-label="registration-form" data-js-form="reg">
+            <div class="login-page__wrapper login-form --reg is-active" aria-label="registration-form" data-js-form="reg">
                 <header class="login-form__header">
                     <div class="login-form__wrapper-logo">
                         <img class="login-form__logo" src="./images/black-logo.png" alt="black-logo">
                         <h1 class="login-form__title">OBERON</h1>
                     </div>
 
-                    <nav class="login-form__panel" aria-label="input-selection" data-js-navigation>
-                        <button class="login-form__button button--switch" aria-label="reg-tab" data-js-tab-button="reg">Регистрация</button>
-                        <button class="login-form__button button--switch" aria-label="auth-tab" data-js-tab-button="auth">Авторизация</button>
+                    <nav class="login-form__panel" aria-label="input-selection">
+                        <button class="login-form__button button--switch" aria-label="reg-tab"
+                            data-js-tab-button="reg">Регистрация</button>
+                        <button class="login-form__button button--switch" aria-label="auth-tab"
+                            data-js-tab-button="auth">Авторизация</button>
                     </nav>
                 </header>
 
                 <form class="login-form__form form">
-
                     <div class="form__field field">
+                        <label class="field__label" for="reg-login"><sup>*</sup>Login</label>
                         <input class="field__input" id="reg-login" type="text" autocomplete="off" placeholder=" ">
-                        <label class="field__label" for="reg-login">Login</label>
                     </div>
 
                     <div class="form__field field">
-                        <label class="field__label" for="reg-name">Your Name</label>
+                        <label class="field__label" for="reg-name"><sup>*</sup>Your Name</label>
                         <input class="field__input" id="reg-name" type="text" autocomplete="off" placeholder=" ">
                     </div>
 
                     <div class="form__field field">
-                        <label class="field__label" for="reg-pass">Password</label>
+                        <label class="field__label" for="reg-pass"><sup>*</sup>Password</label>
                         <input class="field__input" id="reg-pass" type="password" autocomplete="off" placeholder=" ">
                     </div>
 
                     <div class="form__field field">
-                        <label class="field__label" for="return-pass">Return Password</label>
-                        <input class="field__input" id="return-pass" type="password" autocomplete="off" placeholder=" ">
+                        <label class="field__label" for="optional-num">Phone Number (only +7)</label>
+                        <input class="field__input" id="optional-num" type="number" autocomplete="off" placeholder=" ">
                     </div>
 
                     <div class="form__field field">
-                        <label class="field__label" for="reg-email">E-Mail</label>
+                        <label class="field__label" for="reg-email"><sup>*</sup>E-Mail</label>
                         <input class="field__input" id="reg-email" type="email" autocomplete="off" placeholder=" ">
+                    </div>
+
+                    <div class="login-form__form__description">
+                        <p>* - эти поля являются обязательными для заполнения,
+                            обратите внимание что поле с указанием номера телефона может в будущем вам помочь
+                            восстановить доступ если вы забыли e-mail</p><br>
                     </div>
 
                     <button class="login-form button--primary">Зарегистрироваться</button>
                 </form>
             </div>
 
-            <div class="login-page__wrapper-form --auth" aria-label="authorization-form" data-js-form="auth">
+            <div class="login-page__wrapper login-form --auth" aria-label="authorization-form" data-js-form="auth">
                 <header class="login-form__header">
                     <div class="login-form__wrapper-logo">
                         <img class="login-form__logo" src="./images/black-logo.png" alt="black-logo">
@@ -67,8 +74,10 @@
                     </div>
 
                     <nav class="login-form__panel" aria-label="input-selection" data-js-navigation>
-                        <button class="login-form__button button--switch" aria-label="reg-tab" data-js-tab-button="reg">Регистрация</button>
-                        <button class="login-form__button button--switch" aria-label="auth-tab" data-js-tab-button="auth">Авторизация</button>
+                        <button class="login-form__button button--switch" aria-label="reg-tab"
+                            data-js-tab-button="reg">Регистрация</button>
+                        <button class="login-form__button button--switch" aria-label="auth-tab"
+                            data-js-tab-button="auth">Авторизация</button>
                     </nav>
                 </header>
 

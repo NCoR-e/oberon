@@ -208,18 +208,15 @@ button:focus {
 .button--primary {
   border: 1px, solid, var(--second-white-A75);
   background-color: var(--second-DarkGrey-A50);
-  font-size: var(--small-font);
   border-radius: 5px;
 }
 .button--switch {
   border: 1px, solid, var(--second-white-A75);
-  font-size: var(--small-font);
   border-radius: 5px;
 }
 .button--action {
   border: 1px, solid, var(--second-white-A75);
   background-color: var(--first-black-A35);
-  font-size: var(--small-font);
   border-radius: 5px;
 }
 
@@ -248,17 +245,14 @@ button:focus {
 }
 .field__label {
   position: absolute;
-  width: 11.25rem;
   top: 50%;
-  left: 11px;
   translate: 0 -50%;
   color: var(--first-white-A35);
   pointer-events: none;
   transition: var(--transition-time);
-  letter-spacing: 0.125rem;
 }
 .field:has(.field__input:not(:placeholder-shown)) .field__label {
-  scale: 0.8;
+  scale: 0.7;
   translate: -1.8em -2.8em;
   color: var(--first-white-A75);
 }
@@ -267,9 +261,8 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: max-content;
+  width: 100%;
   height: max-content;
-  gap: 2.5rem;
   flex-direction: column;
   background-color: var(--first-DarkGrey-A75);
 }
@@ -290,11 +283,6 @@ button:focus {
   width: 100%;
   height: 100%;
 }
-@media (max-width: 320.98px) {
-  .login-page {
-    background: linear-gradient(180deg, rgba(217, 217, 217, 0.35) 0%, rgba(132, 132, 132, 0.5) 10%, rgba(71, 71, 71, 0.9) 35%, #2b2b2b 75%);
-  }
-}
 @media (min-width: 321px) and (max-width: 767.98px) {
   .login-page {
     background: linear-gradient(180deg, rgba(217, 217, 217, 0.35) 0%, rgba(132, 132, 132, 0.5) 10%, rgba(71, 71, 71, 0.9) 35%, #2b2b2b 75%);
@@ -305,7 +293,7 @@ button:focus {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    background-image: url(../images/globals/bg-page.png), linear-gradient(180deg, rgba(217, 217, 217, 0.35) 0%, rgba(132, 132, 132, 0.5) 10%, rgba(71, 71, 71, 0.9) 35%, #2b2b2b 75%);
+    background-image: url(../images/bg-page.png), linear-gradient(180deg, rgba(217, 217, 217, 0.35) 0%, rgba(132, 132, 132, 0.5) 10%, rgba(71, 71, 71, 0.9) 35%, #2b2b2b 75%);
   }
 }
 .login-page__container {
@@ -316,106 +304,111 @@ button:focus {
   width: 100%;
   height: 100%;
 }
-.login-page__wrapper-form {
+.login-page__wrapper {
   border: 2px, solid, var(--first-white-A75);
   position: absolute;
   opacity: 0;
-  width: max-content;
-  height: max-content;
+  height: auto;
   visibility: hidden;
   pointer-events: none;
   border-radius: 14px;
   backdrop-filter: blur(50px);
   transition: opacity 0.4s ease-in, transform 0.4s ease-in;
 }
-.login-page__wrapper-form.is-active {
+.login-page__wrapper.is-active {
   opacity: 1;
   pointer-events: all;
   visibility: visible;
 }
-.login-page__wrapper-form.--reg + .login-page__wrapper-form.--auth {
-  width: max-content;
-  height: max-content;
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .login-page__wrapper.--auth .button--primary {
+    margin-top: 2.1875rem;
+  }
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .login-page__wrapper {
+    border: 1px, solid, var(--first-white-A75);
+    width: 19.375rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .login-page__wrapper {
+    border: 1px, solid, var(--first-white-A75);
+    width: 26.25rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1440.98px) {
+  .login-page__wrapper {
+    width: 30rem;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .login-page__wrapper {
+    width: 34.375rem;
+  }
+}
+@media (min-width: 1920.02px) {
+  .login-page__wrapper {
+    width: 37.5rem;
+  }
 }
 
-.login-form__header {
+.login-form__header, .login-form.form {
   width: 100%;
+  height: auto;
+}
+.login-form__header {
   height: max-content;
 }
 .login-form__wrapper-logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 5rem;
+  padding: 0.3125rem 0px 0.3125rem 0px;
   border-radius: 11px 11px 0px 0px;
   background-color: var(--first-white-A75);
 }
-@media (max-width: 320.98px) {
-  .login-form__wrapper-logo {
-    height: 3.125rem;
-  }
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__wrapper-logo {
-    height: 3.75rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__wrapper-logo {
-    height: 3.75rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1440.98px) {
-  .login-form__wrapper-logo {
-    height: 3.75rem;
-  }
-}
-.login-form__logo {
-  width: 72px;
-  height: 72px;
-}
-@media (max-width: 320.98px) {
-  .login-form__logo {
-    width: 32px;
-    height: 32px;
-  }
-}
 @media (min-width: 321px) and (max-width: 767.98px) {
   .login-form__logo {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .login-form__logo {
-    width: 52px;
-    height: 52px;
+    width: 42px;
+    height: 42px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1440.98px) {
   .login-form__logo {
     width: 52px;
     height: 52px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .login-form__logo {
+    width: 62px;
+    height: 62px;
+  }
+}
+@media (min-width: 1920.02px) {
+  .login-form__logo {
+    width: 72px;
+    height: 72px;
   }
 }
 .login-form__title {
   display: inline-block;
   font-family: "Allerta";
-  letter-spacing: 5px;
+  letter-spacing: 0.3125rem;
   padding-left: 2.5rem;
-  font-size: var(--accent-font);
   color: var(--first-black-A75);
   text-shadow: 0px 4px 4px var(--first-black-A15);
 }
-@media (max-width: 320.98px) {
-  .login-form__title {
-    padding-left: 1.25rem;
-    font-size: var(--default-font);
-  }
-}
 @media (min-width: 321px) and (max-width: 767.98px) {
   .login-form__title {
+    letter-spacing: 0.1875rem;
     padding-left: 1.25rem;
     font-size: var(--medium-font);
   }
@@ -423,193 +416,220 @@ button:focus {
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .login-form__title {
     padding-left: 1.25rem;
-    font-size: var(--big-font);
+    font-size: var(--medium-font);
   }
 }
 @media (min-width: 1024px) and (max-width: 1440.98px) {
   .login-form__title {
     font-size: var(--big-font);
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .login-form__title {
+    font-size: var(--accent-font);
+  }
+}
+@media (min-width: 1920.02px) {
+  .login-form__title {
+    font-size: var(--accent-font);
   }
 }
 .login-form__panel {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 3.75rem;
+  padding: 0.625rem 0px 0.625rem 0px;
+  height: auto;
   background-color: var(--second-DarkGrey-A50);
   border-bottom: 1px solid var(--second-white-A50);
 }
-@media (max-width: 320.98px) {
+@media (min-width: 321px) and (max-width: 767.98px) {
   .login-form__panel {
-    height: 3.125rem;
-  }
-}
-@media (min-width: 1920.02px) {
-  .login-form__panel {
-    height: 5rem;
+    padding: 0.3125rem;
   }
 }
 .login-form__panel .button--switch {
-  height: 2.5rem;
-  width: 12.5rem;
+  width: max-content;
+  height: max-content;
+  padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
   color: var(--first-white-A85);
-}
-@media (max-width: 320.98px) {
-  .login-form__panel .button--switch {
-    height: 1.875rem;
-    width: 7.5rem;
-    font-size: var(--xSmall-font);
-  }
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
   .login-form__panel .button--switch {
-    height: 1.875rem;
-    width: 8.75rem;
+    padding: 0.3125rem;
     font-size: var(--xSmall-font);
-  }
-}
-@media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__panel .button--switch {
-    height: 2.1875rem;
-    width: 11.25rem;
-    font-size: var(--small-font);
-  }
-}
-@media (min-width: 1024px) and (max-width: 1440.98px) {
-  .login-form__panel .button--switch {
-    height: 2.1875rem;
-    font-size: var(--default-font);
   }
 }
 @media (min-width: 1441px) and (max-width: 1920px) {
   .login-form__panel .button--switch {
-    font-size: var(--medium-font);
+    font-size: var(--small-font);
   }
 }
 @media (min-width: 1920.02px) {
   .login-form__panel .button--switch {
-    height: 2.8125rem;
-    width: 13.75rem;
-    border-radius: 6px;
-    font-size: var(--medium-font);
-    letter-spacing: 3px;
+    padding: 0.4375rem;
+    font-size: var(--default-font);
   }
 }
 .login-form__form {
-  gap: 2.5rem;
-  padding: 1.875rem;
-  border-radius: 0px 0px 13px 13px;
-}
-@media (max-width: 320.98px) {
-  .login-form__form {
-    gap: 1.875rem;
-    border-radius: 0px 0px 11px 11px;
-  }
+  padding: 0 0.9375rem 0.9375rem 0.9375rem;
+  border-radius: 0 0 0.8125rem 0.8125rem;
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
   .login-form__form {
-    gap: 1.875rem;
-    border-radius: 0px 0px 11px 11px;
+    padding: 0.625rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .login-form__form {
-    gap: 2.1875rem;
+    padding: 0 0.625rem 0.625rem 0.625rem;
   }
 }
-@media (min-width: 1920.02px) {
-  .login-form__form {
-    gap: 3.125rem;
+.login-form__form .field {
+  margin-top: 2.5rem;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .login-form__form .field {
+    margin-top: 1.25rem;
   }
-  .login-form__form button:last-child {
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .login-form__form .field {
     margin-top: 1.875rem;
   }
 }
-.login-form__form input {
+.login-form__form .field__input {
   width: 26.25rem;
-  height: 3.125rem;
-}
-.login-form__form input::placeholder {
-  opacity: 0;
-}
-@media (max-width: 320.98px) {
-  .login-form__form input {
-    height: 2.1875rem;
-    width: 15rem;
-    padding-left: 0.3125rem;
-  }
+  height: 2.5rem;
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__form input {
-    height: 2.5rem;
+  .login-form__form .field__input {
     width: 17.5rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__form input {
-    height: 2.5rem;
+  .login-form__form .field__input {
     width: 23.75rem;
   }
 }
-@media (min-width: 1024px) and (max-width: 1440.98px) {
-  .login-form__form input {
-    height: 2.5rem;
-  }
-}
 @media (min-width: 1441px) and (max-width: 1920px) {
-  .login-form__form input {
-    width: 30rem;
+  .login-form__form .field__input {
+    width: 28.75rem;
   }
 }
 @media (min-width: 1920.02px) {
-  .login-form__form input {
-    width: 31.25rem;
-    padding-left: 0.9375rem;
-    border-radius: 7px;
-    letter-spacing: 2px;
+  .login-form__form .field__input {
+    width: 32.5rem;
+    height: 3.125rem;
+    border-radius: 0.4375rem;
   }
 }
-.login-form__form button {
-  width: 18.75rem;
-  height: 3.125rem;
-  color: var(--first-white-A85);
+.login-form__form .field__input::placeholder {
+  opacity: 0;
 }
-@media (max-width: 320.98px) {
-  .login-form__form button {
-    width: 11.25rem;
-    height: 2.1875rem;
+.login-form__form .field__input[type=number] {
+  -moz-appearance: textfield;
+}
+.login-form__form .field__input[type=number]::-webkit-outer-spin-button, .login-form__form .field__input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.login-form__form .field__label {
+  left: 0.625rem;
+  letter-spacing: 0.125rem;
+  font-size: var(--small-font);
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .login-form__form .field__label {
+    left: 0.3125rem;
+    letter-spacing: 0.0625rem;
     font-size: var(--xSmall-font);
   }
 }
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .login-form__form .field__label {
+    font-size: var(--default-font);
+  }
+}
+@media (min-width: 1920.02px) {
+  .login-form__form .field__label {
+    font-size: var(--medium-font);
+  }
+}
+.login-form__form__description {
+  margin-top: 0.9375rem;
+  width: 100%;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .login-form__form__description {
+    margin-top: 0.625rem;
+  }
+}
+.login-form__form__description p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: var(--small-font);
+  color: var(--first-white-A50);
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .login-form__form__description p {
+    font-size: var(--xSmall-font);
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .login-form__form__description p {
+    font-size: var(--xSmall-font);
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .login-form__form__description p {
+    margin-top: 0.9375rem;
+    font-size: var(--small-font);
+  }
+}
+@media (min-width: 1920.02px) {
+  .login-form__form__description p {
+    margin-top: 0.9375rem;
+    font-size: var(--default-font);
+  }
+}
+.login-form__form button {
+  margin-top: 0.9375rem;
+  width: max-content;
+  height: 2.5rem;
+  padding: 0 0.3125rem 0 0.3125rem;
+  color: var(--first-white-A85);
+  font-size: var(--default-font);
+}
 @media (min-width: 321px) and (max-width: 767.98px) {
   .login-form__form button {
-    width: 13.75rem;
-    height: 2.5rem;
+    margin-top: 0.625rem;
     font-size: var(--small-font);
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .login-form__form button {
-    width: 13.75rem;
-    height: 2.5rem;
+    margin-top: 0.3125rem;
     font-size: var(--small-font);
   }
 }
 @media (min-width: 1024px) and (max-width: 1440.98px) {
   .login-form__form button {
-    width: 15rem;
-    font-size: var(--default-font);
+    font-size: var(--medium-font);
   }
 }
 @media (min-width: 1441px) and (max-width: 1920px) {
   .login-form__form button {
-    font-size: var(--medium-font);
+    margin-top: 1.25rem;
   }
 }
 @media (min-width: 1920.02px) {
   .login-form__form button {
-    font-size: var(--big-font);
+    margin-top: 1.25rem;
+    padding: 0.625rem;
+    font-size: var(--medium-font);
   }
 }
 .login-form__support {
@@ -626,14 +646,6 @@ button:focus {
   padding: 10px;
   backdrop-filter: blur(100px);
   color: var(--first-white-A85);
-}
-@media (max-width: 320.98px) {
-  .login-form__support.button--action {
-    letter-spacing: 0.0625rem;
-    backdrop-filter: blur(0px);
-    font-size: var(--xSmall-font);
-    padding: 5px;
-  }
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
   .login-form__support.button--action {

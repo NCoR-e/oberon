@@ -28,18 +28,15 @@
 
     &__label {
         position: absolute;
-        width: rem(180);
         top: 50%;
-        left: 11px;
         translate: 0 -50%;
         color: var(--first-white-A35);
         pointer-events: none;
         transition: var(--transition-time);
-        letter-spacing: rem(2);
     }
 
     &:has(.field__input:not(:placeholder-shown)) &__label {
-        scale: 0.8;
+        scale: 0.7;
         translate: -1.8em -2.8em;
         color: var(--first-white-A75);
     }

@@ -9,14 +9,6 @@
     width: 100%;
     height: 100%;
 
-    @include mobile-xs {
-        background: linear-gradient(180deg,
-                rgba(217, 217, 217, 0.35) 0%,
-                rgba(132, 132, 132, 0.5) 10%,
-                rgba(71, 71, 71, 0.9) 35%,
-                #2b2b2b 75%);
-    }
-
     @include mobile-above {
         background: linear-gradient(180deg,
                 rgba(217, 217, 217, 0.35) 0%,
@@ -29,7 +21,7 @@
         background-size: cover;
         background-position: top;
         background-repeat: no-repeat;
-        background-image: url(../images/globals/bg-page.png),
+        background-image: url(../images/bg-page.png),
             linear-gradient(180deg,
                 rgba(217, 217, 217, 0.35) 0%,
                 rgba(132, 132, 132, 0.5) 10%,
@@ -44,18 +36,16 @@
         height: 100%;
     }
 
-    &__wrapper-form {
+    &__wrapper {
         @include border-pack(2px, solid, var(--first-white-A75));
         position: absolute;
         opacity: 0;
-        width: max-content;
-        height: max-content;
+        height: auto;
         visibility: hidden;
         pointer-events: none;
         border-radius: 14px;
         backdrop-filter: blur(50px);
         transition: opacity 0.4s ease-in, transform 0.4s ease-in;
-
 
         &.is-active {
             opacity: 1;
@@ -63,254 +53,291 @@
             visibility: visible;
         }
 
-        &.--reg+&.--auth {
-            width: max-content;
-            height: max-content;
+        &.--auth {
+            .button--primary {
+                @include desktop-xl-above {
+                    margin-top: rem(35);
+                }
+            }
+        }
+
+        @include mobile-above {
+            @include border-pack(1px, solid, var(--first-white-A75));
+            width: rem(310);
+        }
+
+        @include tablet-above {
+            @include border-pack(1px, solid, var(--first-white-A75));
+            width: rem(420);
+        }
+
+        @include laptop-above {
+            width: rem(480);
+        }
+
+        @include desktop-xl-above {
+            width: rem(550);
+        }
+
+        @include ultra-wide {
+            width: rem(600);
         }
     }
-
 }
 
 .login-form {
-    &__header {
+
+    &__header,
+    &.form {
         width: 100%;
-        height: max-content;
+        height: auto;
+    }
+
+    &__header {
+        height: max-content
     }
 
     &__wrapper-logo {
         @include flex(flex, center, center);
-        width: 100%;
-        height: rem(80);
+        padding: rem(5) 0px rem(5) 0px;
         border-radius: 11px 11px 0px 0px;
         background-color: var(--first-white-A75);
-
-        @include mobile-xs {
-            height: rem(50);
-        }
-
-        @include mobile-above {
-            height: rem(60);
-        }
-
-        @include tablet-above {
-            height: rem(60);
-        }
-
-        @include laptop-above {
-            height: rem(60);
-        }
     }
 
     &__logo {
-        @include one-size(72px);
-
-        @include mobile-xs {
-            @include one-size(32px);
-        }
-
         @include mobile-above {
-            @include one-size(48px);
+            @include one-size(42px);
         }
 
         @include tablet-above {
-            @include one-size(52px);
+            @include one-size(42px);
         }
 
         @include laptop-above {
             @include one-size(52px);
+        }
+
+        @include desktop-xl-above {
+            @include one-size(62px);
+        }
+
+        @include ultra-wide {
+            @include one-size(72px);
         }
     }
 
     &__title {
         display: inline-block;
         font-family: "Allerta";
-        letter-spacing: 5px;
+        letter-spacing: rem(5);
         padding-left: rem(40);
-        font-size: var(--accent-font);
         color: var(--first-black-A75);
         text-shadow: 0px 4px 4px var(--first-black-A15);
 
-        @include mobile-xs {
-            padding-left: rem(20);
-            font-size: var(--default-font);
-        }
-
         @include mobile-above {
+            letter-spacing: rem(3);
             padding-left: rem(20);
             font-size: var(--medium-font);
         }
 
         @include tablet-above {
             padding-left: rem(20);
-            font-size: var(--big-font);
+            font-size: var(--medium-font);
         }
 
         @include laptop-above {
             font-size: var(--big-font);
         }
+
+        @include desktop-xl-above {
+            font-size: var(--accent-font);
+        }
+
+        @include ultra-wide {
+            font-size: var(--accent-font)
+        }
     }
 
     &__panel {
         @include flex(flex, space-around, center);
-        width: 100%;
-        height: rem(60);
+        padding: rem(10) 0px rem(10) 0px;
+        height: auto;
         background-color: var(--second-DarkGrey-A50);
         border-bottom: 1px solid var(--second-white-A50);
 
-        @include mobile-xs {
-            height: rem(50);
-        }
-
-        @include ultra-wide {
-            height: rem(80);
+        @include mobile-above {
+            padding: rem(5);
         }
 
         .button {
             &--switch {
-                height: rem(40);
-                width: rem(200);
+                width: max-content;
+                height: max-content;
+                padding: rem(5) rem(10) rem(5) rem(10);
                 color: var(--first-white-A85);
 
-                @include mobile-xs {
-                    height: rem(30);
-                    width: rem(120);
-                    font-size: var(--xSmall-font);
-                }
-
                 @include mobile-above {
-                    height: rem(30);
-                    width: rem(140);
+                    padding: rem(5);
                     font-size: var(--xSmall-font);
-                }
-
-                @include tablet-above {
-                    height: rem(35);
-                    width: rem(180);
-                    font-size: var(--small-font);
-                }
-
-                @include laptop-above {
-                    height: rem(35);
-                    font-size: var(--default-font);
                 }
 
                 @include desktop-xl-above {
-                    font-size: var(--medium-font);
+                    font-size: var(--small-font);
                 }
 
                 @include ultra-wide {
-                    height: rem(45);
-                    width: rem(220);
-                    border-radius: 6px;
-                    font-size: var(--medium-font);
-                    letter-spacing: 3px;
+                    padding: rem(7);
+                    font-size: var(--default-font);
                 }
             }
         }
     }
 
     &__form {
-        gap: rem(40);
-        padding: rem(30);
-        border-radius: 0px 0px 13px 13px;
-
-        @include mobile-xs {
-            gap: rem(30);
-            border-radius: 0px 0px 11px 11px;
-        }
+        padding: 0 rem(15) rem(15) rem(15);
+        border-radius: 0 0 rem(13) rem(13);
 
         @include mobile-above {
-            gap: rem(30);
-            border-radius: 0px 0px 11px 11px;
+            padding: rem(10);
         }
 
         @include tablet-above {
-            gap: rem(35);
+            padding: 0 rem(10) rem(10) rem(10);
         }
 
-        @include ultra-wide {
-            gap: rem(50);
+        .field {
+            margin-top: rem(40);
 
-            & button:last-child {
+            @include mobile-above {
+                margin-top: rem(20);
+            }
+
+            @include tablet-above {
                 margin-top: rem(30);
             }
+
+            &__input {
+                width: rem(420);
+                height: rem(40);
+
+                @include mobile-above {
+                    width: rem(280);
+                }
+
+                @include tablet-above {
+                    width: rem(380);
+                }
+
+                @include desktop-xl-above {
+                    width: rem(460);
+                }
+
+                @include ultra-wide {
+                    width: rem(520);
+                    height: rem(50);
+                    border-radius: rem(7);
+                }
+
+                &::placeholder {
+                    opacity: 0;
+                }
+
+                &[type="number"] {
+                    -moz-appearance: textfield;
+
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+                }
+            }
+
+            &__label {
+                left: rem(10);
+                letter-spacing: rem(2);
+                font-size: var(--small-font);
+
+                @include mobile-above {
+                    left: rem(5);
+                    letter-spacing: rem(1);
+                    font-size: var(--xSmall-font);
+                }
+
+                @include desktop-xl-above {
+                    font-size: var(--default-font);
+                }
+
+                @include ultra-wide {
+                    font-size: var(--medium-font);
+                }
+            }
         }
 
-        input {
-            width: rem(420);
-            height: rem(50);
-
-            &::placeholder {
-                opacity: 0;
-            }
-
-            @include mobile-xs {
-                height: rem(35);
-                width: rem(240);
-                padding-left: rem(5);
-            }
+        &__description {
+            margin-top: rem(15);
+            width: 100%;
 
             @include mobile-above {
-                height: rem(40);
-                width: rem(280);
+                margin-top: rem(10);
             }
 
-            @include tablet-above {
-                height: rem(40);
-                width: rem(380);
-            }
+            p {
+                @include flex (flex, center, center);
+                text-align: center;
+                font-size: var(--small-font);
+                color: var(--first-white-A50);
 
-            @include laptop-above {
-                height: rem(40);
-            }
+                @include mobile-above {
+                    font-size: var(--xSmall-font);
+                }
 
-            @include desktop-xl-above {
-                width: rem(480);
-            }
+                @include tablet-above {
+                    font-size: var(--xSmall-font);
+                }
 
-            @include ultra-wide {
-                width: rem(500);
-                padding-left: rem(15);
-                border-radius: 7px;
-                letter-spacing: 2px;
+                @include desktop-xl-above {
+                    margin-top: rem(15);
+                    font-size: var(--small-font);
+                }
+
+                @include ultra-wide {
+                    margin-top: rem(15);
+                    font-size: var(--default-font);
+                }
             }
         }
-
 
         button {
-            width: rem(300);
-            height: rem(50);
+            margin-top: rem(15);
+            width: max-content;
+            height: rem(40);
+            padding: 0 rem(5) 0 rem(5);
             color: var(--first-white-A85);
-
-            @include mobile-xs {
-                width: rem(180);
-                height: rem(35);
-                font-size: var(--xSmall-font);
-            }
+            font-size: var(--default-font);
 
             @include mobile-above {
-                width: rem(220);
-                height: rem(40);
+                margin-top: rem(10);
                 font-size: var(--small-font);
             }
 
             @include tablet-above {
-                width: rem(220);
-                height: rem(40);
+                margin-top: rem(5);
                 font-size: var(--small-font);
             }
 
             @include laptop-above {
-                width: rem(240);
-                font-size: var(--default-font);
-            }
-
-            @include desktop-xl-above {
                 font-size: var(--medium-font);
             }
 
+            @include desktop-xl-above {
+                margin-top: rem(20);
+            }
+
             @include ultra-wide {
-                font-size: var(--big-font);
+                margin-top: rem(20);
+                padding: rem(10);
+                font-size: var(--medium-font)
             }
         }
     }
@@ -327,13 +354,6 @@
             padding: 10px;
             backdrop-filter: blur(100px);
             color: var(--first-white-A85);
-
-            @include mobile-xs {
-                letter-spacing: rem(1);
-                backdrop-filter: blur(0px);
-                font-size: var(--xSmall-font);
-                padding: 5px;
-            }
 
             @include mobile-above {
                 backdrop-filter: blur(0px);
