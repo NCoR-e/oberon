@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <main class="login-page" aria-label="Login Page">
+    <main class="login-page" aria-label="Login Page" data-js-root-parent>
         <div class="login-page__container" data-js-container-form>
             <div class="login-page__wrapper login-form --reg is-active" aria-label="registration-form" data-js-form="reg">
                 <header class="login-form__header">
@@ -74,10 +74,8 @@
                     </div>
 
                     <nav class="login-form__panel" aria-label="input-selection" data-js-navigation>
-                        <button class="login-form__button button--switch" aria-label="reg-tab"
-                            data-js-tab-button="reg">Регистрация</button>
-                        <button class="login-form__button button--switch" aria-label="auth-tab"
-                            data-js-tab-button="auth">Авторизация</button>
+                        <button class="login-form__button button--switch" aria-label="reg-tab" data-js-tab-button="reg">Регистрация</button>
+                        <button class="login-form__button button--switch" aria-label="auth-tab" data-js-tab-button="auth">Авторизация</button>
                     </nav>
                 </header>
 
@@ -95,11 +93,50 @@
                     <button class="login-form__button button--primary">Авторизоваться</button>
                 </form>
             </div>
+
+            <div class="login-page__wrapper recovery-form --recovery-request-email" aria-label="recovery-form-by-email" data-js-form="recovery-email">
+                <header class="recovery-form__header">
+                    <div class="recovery-form__wrapper --input-email">
+                        <h2 class="recovery-form__title">Восстановление аккаунта</h2>
+                        <h3 class="recovery-form__description">Запрос кода на e-mail</h3>
+                    </div>
+
+                    <div class="recovery-form__wrapper --input-code">
+                        <h2 class="recovery-form__title">Восстановление аккаунта</h2>
+                        <h4 class="recovery-form__description">Мы отправили код восстановления на указанную почту</h4>
+                    </div>
+                </header>
+
+                <form class="recovery-form__form">
+                    <div class="form__field field --input-email">
+                        <label class="field__label" for="user-email">Введите ваш e-mail от Oberon аккаунта</label>
+                        <input class="field__input" id="user-email" type="email" autocomplete="off" placeholder=" ">
+                    </div>
+
+                    <div class="form__field field --input-code"> 
+                        <label class="field__label" for="email-code">Введите код</label>
+                        <input class="field__input" id="email-code" type="number" maxlength="6" autocomplete="off" autofocus>
+                        <div class="cells-wrapper">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <button class="recovery-form__button button--primary" type="submit">Готово</button>
+                </form>
+            </div>
+
+            <!--<div class="login-page__wrapper recovery-form --recovery-request-email" aria-label="recovery-form-by-email"
+                data-js-form="recovery-email" hidden>
+            </div>-->
         </div>
 
-        <div class="login-form__support">
-            <button class="login-form__support button--action" href="#" title="Help" aria-label="support-link">
-                У меня возникли проблемы</button>
+        <div class="login-form__support" data-js-support>
+            <button class="login-form__support button--action" href="#" title="Help" aria-label="support-link">У меня возникли проблемы</button>
         </div>
     </main>
 </body>

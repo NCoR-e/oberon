@@ -36,8 +36,8 @@
     }
 
     &:has(.field__input:not(:placeholder-shown)) &__label {
-        scale: 0.7;
-        translate: -1.8em -2.8em;
+        scale: var(--label-active-scale);
+        translate: var(--label-active-x) var(--label-active-y);
         color: var(--first-white-A75);
     }
 }
