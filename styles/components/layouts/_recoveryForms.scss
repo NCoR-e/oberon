@@ -1,0 +1,127 @@
+@use '../../helpers' as *;
+
+.recovery-form {
+    &__email,
+    &__number {
+
+        &__header {
+            @include flex (flex, center, center);
+            width: 100%;
+            height: auto;
+            border-radius: 11px 11px 0px 0px;
+            background-color: var(--first-white-A75);
+            border-bottom: 1px solid var(--second-white-A50);
+            flex-direction: column;
+            padding: rem(5);
+        }
+
+        &__wrapper {
+            text-align: center;
+            color: var(--first-black-A75);
+        }
+
+        &__form {
+            @include flex (flex, center, center);
+            flex-direction: column;
+            width: 100%; height: auto;
+            padding: 0 0 rem(10) 0;
+
+            .field {
+                @include flex (flex, center, center);
+                margin-bottom: rem(20);
+                flex-direction: column;
+                gap: rem(25);
+
+                &__label {
+                    top: 21%;
+                }
+            }
+        }
+
+        button {
+            width: max-content;
+            height: rem(40);
+            padding: 0 rem(5) 0 rem(5);
+            color: var(--first-white-A85);
+            font-size: var(--default-font);
+
+            @include mobile-above {
+                font-size: var(--small-font);
+            }
+
+            @include tablet-above {
+                font-size: var(--small-font);
+            }
+
+            @include laptop-above {
+                font-size: var(--medium-font);
+            }
+
+            @include ultra-wide {
+                padding: rem(10);
+                font-size: var(--medium-font)
+            }
+        }
+    }
+
+    &__choice {
+
+        &__header {
+            width: 100%;
+            height: auto;
+        }
+
+        &__wrapper {
+            @include flex (flex, center, center);
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            padding: rem(5);
+            color: var(--first-black-A75);
+            border-radius: 11px 11px 0px 0px;
+            background-color: var(--first-white-A75);
+            border-bottom: 1px solid var(--second-white-A50);
+
+            h2,
+            h3 {
+                font-weight: 700;
+            }
+        }
+
+        &__panel {
+            @include flex(flex, space-around, center);
+            padding: rem(15);
+            height: auto;
+            background-color: var(--second-DarkGrey-A50);
+            border-bottom: 1px solid var(--second-white-A50);
+            border-radius: rem(0) rem(0) rem(12) rem(12);
+
+            @include mobile-above {
+                padding: rem(5);
+            }
+
+            .button {
+                &--switch {
+                    width: rem(220);
+                    height: max-content;
+                    padding: rem(5) rem(10) rem(5) rem(10);
+                    color: var(--first-white-A85);
+
+                    @include mobile-above {
+                        padding: rem(5);
+                        font-size: var(--xSmall-font);
+                    }
+
+                    @include desktop-xl-above {
+                        font-size: var(--small-font);
+                    }
+
+                    @include ultra-wide {
+                        padding: rem(7);
+                        font-size: var(--default-font);
+                    }
+                }
+            }
+        }
+    }
+}

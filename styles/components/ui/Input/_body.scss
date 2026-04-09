@@ -1,4 +1,4 @@
-@use '../../helpers/' as *;
+@use '../../../helpers/' as *;
 
 .field {
     position: relative;
@@ -28,7 +28,6 @@
 
     &__label {
         position: absolute;
-        top: 50%;
         translate: 0 -50%;
         color: var(--first-white-A35);
         pointer-events: none;
