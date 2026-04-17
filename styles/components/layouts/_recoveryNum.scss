@@ -2,26 +2,31 @@
 
 .recovery-form {
     &__number {
-        display: none;
-
         &__wrapper {
+
             h2,
             h3 {
                 font-weight: 700;
             }
 
-            &.--title-step-1 {
-                //display: none;
-            }
-
+            &.--title-step-1,
             &.--title-step-2 {
-                display: none;
+                &.is-hidden {
+                    display: none;
+                }
             }
         }
 
         &__form {
+
+            .field.--number-form-step-1,
+            .field.--number-form-step-2 {
+                &.is-hidden {
+                    display: none;
+                }
+            }
+
             .field.--number-form-step-1 {
-                //display: none;
                 margin-top: rem(40);
 
                 input {
@@ -81,7 +86,6 @@
             }
 
             .field.--number-form-step-2 {
-                display: none;
                 margin-top: rem(40);
 
                 .cells-wrapper {

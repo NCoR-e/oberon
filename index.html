@@ -8,27 +8,27 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="icon" sizes="512x512 256x256 128x128 64x64" href="./icons/general/tab-icon.png">
     <link rel="stylesheet" type="text/css" href="./styles/main.css">
-    <script src="./scripts/components/Tabs.js" type="module"></script>
+    <!--<script src="./scripts/modules/#" type="module"></script>-->
     <title>Oberon | Добро пожаловать</title>
 </head>
 
 <body>
-    <main class="login-page" aria-label="Login Page" data-js-root-parent>
-        <div class="login-page__container" data-js-container-form>
-            <div class="login-page__wrapper login-form --reg is-active" aria-label="Registration" data-js-form="reg"
-                <header class="login-form__header">
-                    <div class="login-form__wrapper-logo">
-                        <img class="login-form__logo" src="./images/black-logo.png" alt="black-logo">
-                        <h1 class="login-form__title">OBERON</h1>
+    <main class="login-page" aria-label="Login Page" data-js-container>
+        <section class="login-page__login login-section is-active" aria-label="Login or Register" data-js-collection="login">
+            <div class="login-section__reg-win reg-win is-active" aria-label="Registration" data-js-form="reg">
+                <header class="reg-win__header" aria-label="Registration Form Header">
+                    <div class="reg-win__wrapper-logo">
+                        <img class="reg-win__logo" src="./images/black-logo.png" alt="black-logo">
+                        <h1 class="reg-win__title">OBERON</h1>
                     </div>
 
-                    <nav class="login-form__panel" aria-label="Panel with selection buttons">
-                        <button class="login-form__button button--switch" aria-label="reg-tab" data-js-tab-button="reg">Регистрация</button>
-                        <button class="login-form__button button--switch" aria-label="auth-tab" data-js-tab-button="auth">Авторизация</button>
+                    <nav class="reg-win__panel" aria-label="Panel with selection buttons">
+                        <button class="reg-win__button button--switch" aria-label="reg-tab" data-js-tab-button="reg">Регистрация</button>
+                        <button class="reg-win__button button--switch" aria-label="auth-tab" data-js-tab-button="auth">Авторизация</button>
                     </nav>
                 </header>
 
-                <form class="login-form__form form">
+                <form class="reg-win__form form" aria-label="Form Fields to fill in with information">
                     <div class="form__field field">
                         <label class="field__label" for="reg-login"><sup>*</sup>Login</label>
                         <input class="field__input" id="reg-login" type="text" autocomplete="off" placeholder=" ">
@@ -45,8 +45,8 @@
                     </div>
 
                     <div class="form__field field">
-                        <label class="field__label" for="optional-num">Phone Number (only +7)</label>
-                        <input class="field__input" id="optional-num" type="number" autocomplete="off" placeholder=" ">
+                        <label class="field__label" for="optional-reg-num">Phone Number (only +7)</label>
+                        <input class="field__input" id="optional-reg-num" type="number" autocomplete="off" placeholder=" ">
                     </div>
 
                     <div class="form__field field">
@@ -54,30 +54,30 @@
                         <input class="field__input" id="reg-email" type="email" autocomplete="off" placeholder=" ">
                     </div>
 
-                    <div class="login-form__form__description">
+                    <div class="reg-win__form__description">
                         <p>* - эти поля являются обязательными для заполнения,
                             обратите внимание что поле с указанием номера телефона может в будущем вам помочь
                             восстановить доступ если вы забыли e-mail</p><br>
                     </div>
 
-                    <button class="login-form button--primary">Зарегистрироваться</button>
+                    <button class="reg-win__form button--primary">Зарегистрироваться</button>
                 </form>
             </div>
 
-            <div class="login-page__wrapper login-form --auth" aria-label="Authorization" data-js-form="auth" hidden>
-                <header class="login-form__header">
-                    <div class="login-form__wrapper-logo">
-                        <img class="login-form__logo" src="./images/black-logo.png" alt="black-logo">
-                        <h1 class="login-form__title">OBERON</h1>
+            <div class="login-section__auth-win auth-win" aria-label="Authorization" data-js-form="auth">
+                <header class="auth-win__header" aria-label="Registration Form Header">
+                    <div class="auth-win__wrapper-logo">
+                        <img class="auth-win__logo" src="./images/black-logo.png" alt="black-logo">
+                        <h1 class="auth-win__title">OBERON</h1>
                     </div>
 
-                    <nav class="login-form__panel" aria-label="Panel with selection buttons" data-js-navigation>
-                        <button class="login-form__button button--switch" aria-label="reg-tab" data-js-tab-button="reg">Регистрация</button>
-                        <button class="login-form__button button--switch" aria-label="auth-tab" data-js-tab-button="auth">Авторизация</button>
+                    <nav class="auth-win__panel" aria-label="Panel with selection buttons">
+                        <button class="auth-win__button button--switch" aria-label="reg-tab" data-js-tab-button="reg">Регистрация</button>
+                        <button class="auth-win__button button--switch" aria-label="auth-tab" data-js-tab-button="auth">Авторизация</button>
                     </nav>
                 </header>
 
-                <form class="login-form__form form">
+                <form class="auth-win__form form" aria-label="Form Fields to fill in with information">
                     <div class="form__field field">
                         <label class="field__label" for="auth-login">Login</label>
                         <input class="field__input" id="auth-login" type="text" autocomplete="off" placeholder=" ">
@@ -88,109 +88,132 @@
                         <input class="field__input" id="auth-pass" type="password" autocomplete="off" placeholder=" ">
                     </div>
 
-                    <button class="login-form__button button--primary">Авторизоваться</button>
+                    <button class="auth-win__button button--primary">Авторизоваться</button>
                 </form>
             </div>
 
-            <div class="login-page__wrapper recovery-form" aria-label="Account Recovery" data-js-form="recovery" hidden>
-                <div class="recovery-form__choice" aria-label="Selecting an account recovery method">
-                    <header class="recovery-form__choice__header">
-                        <div class="recovery-form__choice__wrapper">
-                            <h2 class="recovery-form__schoice__title">Восстановление аккаунта</h2>
-                            <h3 class="recovery-form__choice__description">Выберите способ восстановления доступа</h3>
-                        </div>
-
-                        <nav class="recovery-form__choice__panel" aria-label="Panel with selection buttons">
-                            <button class="recovery-form__button button--switch" aria-label="e-mail-tab" data-js-tab-button="recovery-back">По e-mail</button> 
-                            <button class="recovery-form__button button--switch" aria-label="num-tab" data-js-tab-button="recovery-back">По номеру телефона</button>
-                        </nav>
-                    </header>
-                </div>
-
-                <div class="recovery-form__email" aria-label="Recovery-Form by method: recovery via email">
-                    <header class="recovery-form__email__header">
-                        <div class="recovery-form__email__wrapper --title-step-1" aria-label="Recovery Form (method: email) - (step-1)">
-                            <h2 class="recovery-form__email__title">Восстановление аккаунта</h2>
-                            <h3 class="recovery-form__email__description" aria-label="Description Recovery Form">Запрос кода на e-mail</h3>
-                        </div>
-
-                        <div class="recovery-form__email__wrapper --title-step-2" aria-label="Recovery Form (method: email) - (step-2)" >
-                            <h2 class="recovery-form__email__title">Восстановление аккаунта</h2>
-                            <h4 class="recovery-form__email__description" aria-label="Description Recovery Form">Мы отправили код восстановления на указанную почту</h4>
-                        </div>
-                    </header>
-
-                    <form class="recovery-form__email__form">
-                    <div class="form__field field --email-form-step-1" aria-label="Recovery Group Fields (method: email) - (step-1)">
-                        <label class="field__label" for="user-email">Ваш e-mail от Oberon аккаунта</label>
-                        <input class="field__input" id="user-email" type="email" autocomplete="off" placeholder=" ">
-
-                        <div class="recovery-form__email__form__panel">
-                            <button class="recovery-form__button button--primary" type="button">Назад</button>
-                            <button class="recovery-form__button button--primary" type="submit">Отправить</button>
-                        </div>
-                    </div>
-
-                    <div class="form__field field --email-form-step-2" aria-label="Recovery Group Fields (method: email) - (step-2)" >
-                        <label class="field__label" for="email-code">Введите код</label>
-                        <input class="field__input" id="email-code" type="number" maxlength="6" autocomplete="off" autofocus>
-                        <div class="cells-wrapper"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-
-                        <div class="recovery-form__email__form__panel">
-                            <button class="recovery-form__button button--primary" type="submit">Отправить</button>
-                        </div>
-                    </div>
-                    </form>
-                </div>
-
-                <div class="recovery-form__number" aria-label="Recovery-Form by method: recovery via number">
-                    <header class="recovery-form__number__header">
-                        <div class="recovery-form__number__wrapper --title-step-1" aria-label="Recovery Form (method: number) - (step-1)">
-                            <h2 class="recovery-form__number__title">Восстановление аккаунта</h2>
-                            <h3 class="recovery-form__number__description">Запрос кода на номер телефона</h3>
-                        </div>
-
-                        <div class="recovery-form__number__wrapper --title-step-2" aria-label="Recovery Form (method: email) - (step-2)">
-                            <h2 class="recovery-form__number__title">Восстановление аккаунта</h2>
-                            <h4 class="recovery-form__number__description">Мы отправили код на указанный номер</h4>
-                        </div>
-                    </header>
-
-                    <form class="recovery-form__number__form">
-                    <div class="form__field field --number-form-step-1" aria-label="Recovery Group Fields (method: email) - (step-1)">
-                        <label class="field__label" for="user-email">Номер телефона от Oberon аккаунта</label>
-                        <input class="field__input" id="user-email" type="email" autocomplete="off" placeholder=" ">
-
-                        <div class="recovery-form__number__form__panel">
-                            <button class="recovery-form__button button--primary" type="button">Назад</button>
-                            <button class="recovery-form__button button--primary" type="submit">Отправить</button>
-                        </div>
-                    </div>
-
-                    <div class="form__field field --number-form-step-2" aria-label="Recovery Group Fields (method: email) - (step-2)">
-                        <label class="field__label" for="email-code">Введите код</label>
-                        <input class="field__input" id="email-code" type="number" maxlength="6" autocomplete="off" autofocus>
-                        <div class="cells-wrapper">
-                            <div aria-label="symbol cell-1"></div>
-                            <div aria-label="symbol cell-2"></div>
-                            <div aria-label="symbol cell-3"></div>
-                            <div aria-label="symbol cell-4"></div>
-                            <div aria-label="symbol cell-5"></div>
-                            <div aria-label="symbol cell-6"></div>
-                        </div>
-
-                        <div class="recovery-form__number__form__panel">
-                            <button class="recovery-form__button button--primary" type="submit">Отправить</button>
-                        </div>
-                    </div>
-                    </form>
-                </div>
+            <div class="login-section__support" data-js-recovery-button="recovery">
+                <button class="login-section__support button--action" title="Help" aria-label="support-link">Восстановить доступ</button>
             </div>
-        </div>
+        </section>
 
-        <div class="login-form__support" data-js-support>
-            <button class="login-form__support button--action" href="#" title="Help" aria-label="support-link">У меня возникли проблемы</button>
-        </div>
+        <section class="login-page__recovery recovery-section" aria-label="Account Recovery" data-js-collection="recovery">
+            <div class="recovery-section__choice choice-win is-active" aria-label="Account Recovery method selection form" data-js-collection-item="choice-method">
+                <header class="choice-win__header" aria-label="Account Recovery form body">
+                    <div class="choice-win__wrapper">
+                        <h2 class="choice-win__title">Восстановление аккаунта</h2>
+                        <h3 class="choice-win__description">Выберите способ восстановления доступа</h3>
+                    </div>
+
+                    <nav class="choice-win__panel" aria-label="Panel with selection buttons">
+                        <button class="choice-win__button button--switch" aria-label="e-mail-tab" data-js-tab-button="recovery-email">По e-mail</button>
+                        <button class="choice-win__button button--switch" aria-label="num-tab" data-js-tab-button="recovery-num">По номеру телефона</button>
+                    </nav>
+                </header>
+            </div>
+
+            <fieldset class="recovery-section__wrapper-email recovery-via-email-win" aria-label="Account Recovery: email recovery form" data-js-collection-item="recovery-email">
+                <div class="recovery-via-email-win--step-1">
+                    <legend class="recovery-via-email-win__header" aria-label="Account Recovery Form Header">
+                        <div class="recovery-via-email-win__header__wrapper">
+                            <h2 class="recovery-via-email-win__header__wrapper__title">Восстановление аккаунта</h2>
+                            <h3 class="recovery-via-email-win__header__wrapper__description">Запрос кода на e-mail</h3>
+                        </div>
+                    </legend>
+
+                    <form class="recovery-via-email-win__form form" aria-label="Form fields to fill in with information (please note that you are at the account recovery stage 1 = entering data)">
+                        <div class="form__field field">
+                            <label class="field__label" for="recovery-email">Ваш e-mail от Oberon аккаунта</label>
+                            <input class="field__input" id="recovery-email" type="email" autocomplete="off" placeholder=" ">
+
+                            <div class="form__panel">
+                                <button class="form__panel__button button--primary" type="button" data-js-tab-button="choice-method">Назад</button>
+                                <button class="form__panel__button button--primary" type="submit" data-js-tab-button>Отправить</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="recovery-via-email-win--step-2 is-active" aria-label="Form fields to fill in with information (please note that you are at the account recovery stage 2 = entering the code to the email or phone number you entered)">
+                    <legend class="recovery-via-email-win__header" aria-label="Account Recovery Form Header">
+                        <div class="recovery-via-email-win__header__wrapper">
+                            <h2 class="recovery-via-email-win__header__wrapper__title">Восстановление аккаунта</h2>
+                            <h4 class="recovery-via-email-win__header__wrapper__description">Мы отправили код восстановления на указанную почту</h4>
+                        </div>
+                    </legend>
+
+                    <form class="recovery-via-email-win__form form">
+                        <div class="form__code-field code-field">
+                            <label class="code-field__label" for="recovery-email-code">Введите код</label>
+                            <input class="code-field__input" id="recovery-email-code" type="number" maxlength="6" autocomplete="off" autofocus>
+                            <div class="code-field__cells-wrapper" data-js-code-cell>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="form__panel">
+                            <button class="form__panel__button button--primary" type="submit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </fieldset>
+
+            <fieldset class="recovery-section__wrapper-num recovery-via-num-win" aria-label="Account Recovery: number recovery form" data-js-collection-item="recovery-num">
+                <div class="recovery-via-num-win--step-1 is-active">
+                    <legend class="recovery-via-num-win__header" aria-label="Account Recovery Form Header">
+                        <div class="recovery-via-num-win__header__wrapper">
+                            <h2 class="recovery-via-num-win__header__wrapper__title">Восстановление аккаунта</h2>
+                            <h3 class="recovery-via-num-win__header__wrapper__description">Запрос кода на номер телефона</h3>
+                        </div>
+                    </legend>
+
+                    <form class="recovery-via-num-win__form form" aria-label="Form fields to fill in with information (please note that you are at the account recovery stage 1 = entering data)">
+                        <div class="form__field field">
+                            <label class="field__label" for="recovery-num">Номер телефона от Oberon аккаунта</label>
+                            <input class="field__input" id="recovery-num" type="number" autocomplete="off" placeholder=" ">
+
+                            <div class="form__panel">
+                                <button class="form__panel__button button--primary" type="button" data-js-tab-button="choice-method">Назад</button>
+                                <button class="form__panel__button button--primary" type="submit" data-js-tab-button>Отправить</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="recovery-via-num-win--step-2">
+                    <legend class="recovery-via-num-win__header" aria-label="Account Recovery Form Header">
+                        <div class="recovery-via-num-win__header__wrapper">
+                            <h2 class="recovery-via-num-win__header__wrapper__title">Восстановление аккаунта</h2>
+                            <h4 class="recovery-via-num-win__header__wrapper__description">Мы отправили код на указанный номер</h4>
+                        </div>
+                    </legend>
+
+                    <form class="recovery-via-num-win__form form" aria-label="Form fields to fill in with information (please note that you are at the account recovery stage 2 = entering the code to the email or phone number you entered)">
+                        <div class="form__code-field code-field">
+                            <label class="code-field__label" for="recovery-num-code">Введите код</label>
+                            <input class="code-field__input" id="recovery-num-code" type="number" maxlength="6" autocomplete="off" autofocus>
+                            <div class="code-field__cells-wrapper" data-js-code-cell>
+                                <div aria-label="symbol cell-1"></div>
+                                <div aria-label="symbol cell-2"></div>
+                                <div aria-label="symbol cell-3"></div>
+                                <div aria-label="symbol cell-4"></div>
+                                <div aria-label="symbol cell-5"></div>
+                                <div aria-label="symbol cell-6"></div>
+                            </div>
+                        </div>
+
+                        <div class="form__panel">
+                            <button class="form__panel__button button--primary" type="submit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </fieldset>
+        </section>
     </main>
 </body>
 

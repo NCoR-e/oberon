@@ -2,8 +2,6 @@
 
 .recovery-form {
     &__email {
-        display: none;
-
         &__wrapper {
 
             h2,
@@ -11,12 +9,9 @@
                 font-weight: 700;
             }
 
-            /*&.--title-step-1 {
-                display: none;
-            }*/
-
             &.--title-step-2 {
                 display: none;
+                @include hidden;
             }
         }
 
@@ -81,7 +76,14 @@
             }
 
             .field.--email-form-step-2 {
+                @include hidden;
                 display: none;
+
+                &.is-active {
+                    @include show;
+                    display: block;
+                }
+
                 margin-top: rem(40);
 
                 .cells-wrapper {

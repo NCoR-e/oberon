@@ -161,7 +161,14 @@ button {
   transition: all var(--transition-time);
   background-color: transparent;
   letter-spacing: 2px;
+  visibility: inherit;
+  opacity: inherit;
   outline: 0;
+}
+button.is-active {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 @media (hover: hover) {
   button:hover {
@@ -188,14 +195,21 @@ button:focus {
   border-radius: 5px;
 }
 
-.login-form__header, .login-form.form {
-  width: 100%;
-  height: auto;
+.login-section__reg-win, .login-section__auth-win {
+  opacity: 0;
+  visibility: hidden;
 }
-.login-form__header {
+.login-section__reg-win.is-active, .login-section__auth-win.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.login-section .reg-win__header,
+.login-section .auth-win__header {
+  width: 100%;
   height: max-content;
 }
-.login-form__wrapper-logo {
+.login-section .reg-win__wrapper-logo,
+.login-section .auth-win__wrapper-logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -204,36 +218,42 @@ button:focus {
   background-color: var(--first-white-A75);
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__logo {
+  .login-section .reg-win__logo,
+  .login-section .auth-win__logo {
     width: 42px;
     height: 42px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__logo {
+  .login-section .reg-win__logo,
+  .login-section .auth-win__logo {
     width: 42px;
     height: 42px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1440.98px) {
-  .login-form__logo {
+  .login-section .reg-win__logo,
+  .login-section .auth-win__logo {
     width: 52px;
     height: 52px;
   }
 }
 @media (min-width: 1441px) and (max-width: 1920.98px) {
-  .login-form__logo {
+  .login-section .reg-win__logo,
+  .login-section .auth-win__logo {
     width: 62px;
     height: 62px;
   }
 }
 @media (min-width: 1921px) {
-  .login-form__logo {
+  .login-section .reg-win__logo,
+  .login-section .auth-win__logo {
     width: 72px;
     height: 72px;
   }
 }
-.login-form__title {
+.login-section .reg-win__title,
+.login-section .auth-win__title {
   display: inline-block;
   font-family: "Allerta";
   letter-spacing: 0.3125rem;
@@ -242,34 +262,40 @@ button:focus {
   text-shadow: 0px 4px 4px var(--first-black-A15);
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__title {
+  .login-section .reg-win__title,
+  .login-section .auth-win__title {
     letter-spacing: 0.1875rem;
     padding-left: 1.25rem;
     font-size: var(--medium-font);
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__title {
+  .login-section .reg-win__title,
+  .login-section .auth-win__title {
     padding-left: 1.25rem;
     font-size: var(--medium-font);
   }
 }
 @media (min-width: 1024px) and (max-width: 1440.98px) {
-  .login-form__title {
+  .login-section .reg-win__title,
+  .login-section .auth-win__title {
     font-size: var(--big-font);
   }
 }
 @media (min-width: 1441px) and (max-width: 1920.98px) {
-  .login-form__title {
+  .login-section .reg-win__title,
+  .login-section .auth-win__title {
     font-size: var(--accent-font);
   }
 }
 @media (min-width: 1921px) {
-  .login-form__title {
+  .login-section .reg-win__title,
+  .login-section .auth-win__title {
     font-size: var(--accent-font);
   }
 }
-.login-form__panel {
+.login-section .reg-win__panel,
+.login-section .auth-win__panel {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -279,137 +305,63 @@ button:focus {
   border-bottom: 1px solid var(--second-white-A50);
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__panel {
+  .login-section .reg-win__panel,
+  .login-section .auth-win__panel {
     padding: 0.3125rem;
   }
 }
-.login-form__panel .button--switch {
+.login-section .reg-win__panel .button--switch,
+.login-section .auth-win__panel .button--switch {
   width: max-content;
   height: max-content;
   padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
   color: var(--first-white-A85);
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__panel .button--switch {
+  .login-section .reg-win__panel .button--switch,
+  .login-section .auth-win__panel .button--switch {
     padding: 0.3125rem;
     font-size: var(--xSmall-font);
   }
 }
 @media (min-width: 1441px) and (max-width: 1920.98px) {
-  .login-form__panel .button--switch {
+  .login-section .reg-win__panel .button--switch,
+  .login-section .auth-win__panel .button--switch {
     font-size: var(--small-font);
   }
 }
 @media (min-width: 1921px) {
-  .login-form__panel .button--switch {
+  .login-section .reg-win__panel .button--switch,
+  .login-section .auth-win__panel .button--switch {
     padding: 0.4375rem;
     font-size: var(--default-font);
   }
 }
-.login-form__form {
-  padding: 0 0.9375rem 0.9375rem 0.9375rem;
-  border-radius: 0 0 0.8125rem 0.8125rem;
-}
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__form {
+  .login-section .reg-win__form,
+  .login-section .auth-win__form {
     padding: 0.625rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__form {
+  .login-section .reg-win__form,
+  .login-section .auth-win__form {
     padding: 0 0.625rem 0.625rem 0.625rem;
   }
 }
-.login-form__form .field {
-  margin-top: 2.5rem;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__form .field {
-    margin-top: 1.25rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__form .field {
-    margin-top: 1.875rem;
-  }
-}
-.login-form__form .field__input {
-  width: 26.25rem;
-  height: 2.5rem;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__form .field__input {
-    width: 17.5rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__form .field__input {
-    width: 23.75rem;
-  }
-}
-@media (min-width: 1441px) and (max-width: 1920.98px) {
-  .login-form__form .field__input {
-    width: 28.75rem;
-  }
-}
-@media (min-width: 1921px) {
-  .login-form__form .field__input {
-    width: 32.5rem;
-    height: 3.125rem;
-    border-radius: 0.4375rem;
-  }
-}
-.login-form__form .field__input::placeholder {
-  opacity: 0;
-}
-.login-form__form .field__input[type=number] {
-  -moz-appearance: textfield;
-}
-.login-form__form .field__input[type=number]::-webkit-outer-spin-button, .login-form__form .field__input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.login-form__form .field__label {
-  top: 50%;
-  left: 0.625rem;
-  letter-spacing: 0.125rem;
-  font-size: var(--small-font);
-  --label-active-y: -2.6em;
-}
-.login-form__form .field__label[for=optional-num] {
-  --label-active-x: -2.5em;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__form .field__label {
-    left: 0.3125rem;
-    letter-spacing: 0.0625rem;
-    font-size: var(--xSmall-font);
-    --label-active-x: -1.2em;
-  }
-  .login-form__form .field__label[for=optional-num] {
-    --label-active-x: -2.3em;
-  }
-}
-@media (min-width: 1441px) and (max-width: 1920.98px) {
-  .login-form__form .field__label {
-    font-size: var(--default-font);
-  }
-}
-@media (min-width: 1921px) {
-  .login-form__form .field__label {
-    font-size: var(--medium-font);
-  }
-}
-.login-form__form__description {
+.login-section .reg-win__form__description,
+.login-section .auth-win__form__description {
   margin-top: 0.9375rem;
   width: 100%;
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__form__description {
+  .login-section .reg-win__form__description,
+  .login-section .auth-win__form__description {
     margin-top: 0.625rem;
   }
 }
-.login-form__form__description p {
+.login-section .reg-win__form__description p,
+.login-section .auth-win__form__description p {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -418,28 +370,33 @@ button:focus {
   color: var(--first-white-A50);
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__form__description p {
+  .login-section .reg-win__form__description p,
+  .login-section .auth-win__form__description p {
     font-size: var(--xSmall-font);
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__form__description p {
+  .login-section .reg-win__form__description p,
+  .login-section .auth-win__form__description p {
     font-size: var(--xSmall-font);
   }
 }
 @media (min-width: 1441px) and (max-width: 1920.98px) {
-  .login-form__form__description p {
+  .login-section .reg-win__form__description p,
+  .login-section .auth-win__form__description p {
     margin-top: 0.9375rem;
     font-size: var(--small-font);
   }
 }
 @media (min-width: 1921px) {
-  .login-form__form__description p {
+  .login-section .reg-win__form__description p,
+  .login-section .auth-win__form__description p {
     margin-top: 0.9375rem;
     font-size: var(--default-font);
   }
 }
-.login-form__form button {
+.login-section .reg-win__form button,
+.login-section .auth-win__form button {
   margin-top: 0.9375rem;
   width: max-content;
   height: 2.5rem;
@@ -448,49 +405,160 @@ button:focus {
   font-size: var(--default-font);
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__form button {
-    margin-top: 0.625rem;
+  .login-section .reg-win__form button,
+  .login-section .auth-win__form button {
     font-size: var(--small-font);
+    height: 1.875rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__form button {
-    margin-top: 0.3125rem;
+  .login-section .reg-win__form button,
+  .login-section .auth-win__form button {
     font-size: var(--small-font);
   }
 }
 @media (min-width: 1024px) and (max-width: 1440.98px) {
-  .login-form__form button {
+  .login-section .reg-win__form button,
+  .login-section .auth-win__form button {
     font-size: var(--medium-font);
   }
 }
 @media (min-width: 1441px) and (max-width: 1920.98px) {
-  .login-form__form button {
+  .login-section .reg-win__form button,
+  .login-section .auth-win__form button {
     margin-top: 1.25rem;
   }
 }
 @media (min-width: 1921px) {
-  .login-form__form button {
+  .login-section .reg-win__form button,
+  .login-section .auth-win__form button {
     margin-top: 1.25rem;
     padding: 0.625rem;
     font-size: var(--medium-font);
   }
 }
-.login-form__support {
+.login-section .reg-win .form,
+.login-section .auth-win .form {
+  padding: 0 0.9375rem 0.9375rem 0.9375rem;
+  border-radius: 0 0 0.8125rem 0.8125rem;
+}
+.login-section .reg-win .form .field,
+.login-section .auth-win .form .field {
+  margin-top: 2.5rem;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .login-section .reg-win .form .field,
+  .login-section .auth-win .form .field {
+    margin-top: 1.875rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .login-section .reg-win .form .field,
+  .login-section .auth-win .form .field {
+    margin-top: 1.875rem;
+  }
+}
+.login-section .reg-win .form .field__input,
+.login-section .auth-win .form .field__input {
+  width: 26.25rem;
+  height: 2.5rem;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .login-section .reg-win .form .field__input,
+  .login-section .auth-win .form .field__input {
+    width: 17.5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .login-section .reg-win .form .field__input,
+  .login-section .auth-win .form .field__input {
+    width: 23.75rem;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920.98px) {
+  .login-section .reg-win .form .field__input,
+  .login-section .auth-win .form .field__input {
+    width: 28.75rem;
+  }
+}
+@media (min-width: 1921px) {
+  .login-section .reg-win .form .field__input,
+  .login-section .auth-win .form .field__input {
+    width: 32.5rem;
+    height: 3.125rem;
+    border-radius: 0.4375rem;
+  }
+}
+.login-section .reg-win .form .field__input::placeholder,
+.login-section .auth-win .form .field__input::placeholder {
+  opacity: 0;
+}
+.login-section .reg-win .form .field__input[type=number],
+.login-section .auth-win .form .field__input[type=number] {
+  -moz-appearance: textfield;
+}
+.login-section .reg-win .form .field__input[type=number]::-webkit-outer-spin-button, .login-section .reg-win .form .field__input[type=number]::-webkit-inner-spin-button,
+.login-section .auth-win .form .field__input[type=number]::-webkit-outer-spin-button,
+.login-section .auth-win .form .field__input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.login-section .reg-win .form .field__label,
+.login-section .auth-win .form .field__label {
+  top: 50%;
+  left: 0.625rem;
+  letter-spacing: 0.125rem;
+  font-size: var(--small-font);
+  --label-active-y: -2.6em;
+}
+.login-section .reg-win .form .field__label[for=optional-reg-num],
+.login-section .auth-win .form .field__label[for=optional-reg-num] {
+  --label-active-x: -2.5em;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .login-section .reg-win .form .field__label,
+  .login-section .auth-win .form .field__label {
+    left: 0.3125rem;
+    letter-spacing: 0.0625rem;
+    font-size: var(--xSmall-font);
+    --label-active-x: -1.2em;
+  }
+  .login-section .reg-win .form .field__label[for=optional-reg-num],
+  .login-section .auth-win .form .field__label[for=optional-reg-num] {
+    --label-active-x: -2.3em;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920.98px) {
+  .login-section .reg-win .form .field__label,
+  .login-section .auth-win .form .field__label {
+    font-size: var(--default-font);
+  }
+}
+@media (min-width: 1921px) {
+  .login-section .reg-win .form .field__label,
+  .login-section .auth-win .form .field__label {
+    font-size: var(--medium-font);
+  }
+}
+.login-section__support {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  visibility: hidden;
   width: max-content;
   height: 3.4375rem;
   margin-bottom: 0;
-  visibility: hidden;
-  opacity: 0;
 }
-.login-form__support.visible {
-  visibility: visible;
+.login-section__support.is-active {
   opacity: 1;
+  visibility: visible;
 }
-.login-form__support.button--action {
+.login-section__support.is-active button {
+  opacity: inherit;
+  visibility: inherit;
+}
+.login-section__support.button--action {
   width: max-content;
   height: max-content;
   padding: 10px;
@@ -498,71 +566,323 @@ button:focus {
   color: var(--first-white-A85);
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-form__support.button--action {
+  .login-section__support.button--action {
     backdrop-filter: blur(0px);
     font-size: var(--xSmall-font);
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-form__support.button--action {
+  .login-section__support.button--action {
     backdrop-filter: blur(0px);
     font-size: var(--xSmall-font);
   }
 }
 @media (min-width: 1024px) and (max-width: 1440.98px) {
-  .login-form__support.button--action {
+  .login-section__support.button--action {
     font-size: var(--small-font);
   }
 }
 @media (min-width: 1441px) and (max-width: 1920.98px) {
-  .login-form__support.button--action {
+  .login-section__support.button--action {
     font-size: var(--small-font);
   }
 }
 @media (min-width: 1921px) {
-  .login-form__support.button--action {
+  .login-section__support.button--action {
     font-size: var(--medium-font);
     height: 3.125rem;
   }
 }
 
-.recovery-form__email__header, .recovery-form__number__header {
+.recovery-section__choice {
+  opacity: 0;
+  visibility: hidden;
+  border: 2px, solid, var(--first-white-A75);
+  position: absolute;
+  top: 49.9%;
+  left: 50%;
+  translate: -50% -50%;
+  display: none;
+  height: auto;
+  border-radius: 14px;
+  backdrop-filter: blur(50px);
+  transition: opacity 0.4s ease-in;
+}
+.recovery-section__choice.is-active {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section__choice {
+    border: 1px, solid, var(--first-white-A75);
+    width: 19.375rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .recovery-section__choice {
+    border: 1px, solid, var(--first-white-A75);
+    width: 26.25rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1440.98px) {
+  .recovery-section__choice {
+    width: 30rem;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920.98px) {
+  .recovery-section__choice {
+    width: 34.375rem;
+  }
+}
+@media (min-width: 1921px) {
+  .recovery-section__choice {
+    width: 37.5rem;
+  }
+}
+.recovery-section__wrapper-email.is-active, .recovery-section__wrapper-num.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.recovery-section__wrapper-email, .recovery-section__wrapper-num {
+  opacity: 0;
+  visibility: hidden;
+  border: 2px, solid, var(--first-white-A75);
+  position: absolute;
+  top: 49.9%;
+  left: 50%;
+  translate: -50% -50%;
+  height: auto;
+  border-radius: 14px;
+  backdrop-filter: blur(50px);
+  transition: opacity 0.4s ease-in;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+    border: 1px, solid, var(--first-white-A75);
+    width: 19.375rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+    border: 1px, solid, var(--first-white-A75);
+    width: 26.25rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1440.98px) {
+  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+    width: 30rem;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920.98px) {
+  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+    width: 34.375rem;
+  }
+}
+@media (min-width: 1921px) {
+  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+    width: 37.5rem;
+  }
+}
+.recovery-section .choice-win__header {
+  width: 100%;
+  height: auto;
+}
+.recovery-section .choice-win__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100%;
   height: auto;
+  padding: 0.3125rem;
+  color: var(--first-black-A75);
   border-radius: 11px 11px 0px 0px;
   background-color: var(--first-white-A75);
   border-bottom: 1px solid var(--second-white-A50);
-  flex-direction: column;
-  padding: 0.3125rem;
 }
-.recovery-form__email__wrapper, .recovery-form__number__wrapper {
-  text-align: center;
-  color: var(--first-black-A75);
+.recovery-section .choice-win__title, .recovery-section .choice-win__description {
+  font-weight: 700;
 }
-.recovery-form__email__form, .recovery-form__number__form {
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section .choice-win__title, .recovery-section .choice-win__description {
+    font-size: var(--xSmall-font);
+  }
+}
+.recovery-section .choice-win__panel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem;
+  height: auto;
+  background-color: var(--second-DarkGrey-A50);
+  border-bottom: 1px solid var(--second-white-A50);
+  border-radius: 0rem 0rem 0.75rem 0.75rem;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section .choice-win__panel {
+    flex-direction: column;
+  }
+}
+.recovery-section .choice-win__panel .button--switch {
+  width: 13.75rem;
+  height: max-content;
+  padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
+  color: var(--first-white-A85);
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section .choice-win__panel .button--switch {
+    padding: 0.3125rem;
+    font-size: var(--xSmall-font);
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .recovery-section .choice-win__panel .button--switch {
+    width: 11.875rem;
+    padding: 0.3125rem;
+    font-size: var(--xSmall-font);
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920.98px) {
+  .recovery-section .choice-win__panel .button--switch {
+    font-size: var(--small-font);
+  }
+}
+@media (min-width: 1921px) {
+  .recovery-section .choice-win__panel .button--switch {
+    padding: 0.4375rem;
+    width: 15rem;
+    font-size: var(--default-font);
+  }
+}
+.recovery-section .recovery-via-email-win,
+.recovery-section .recovery-via-num-win {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.recovery-section .recovery-via-email-win.is-active,
+.recovery-section .recovery-via-num-win.is-active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+.recovery-section .recovery-via-email-win__form,
+.recovery-section .recovery-via-num-win__form {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  padding: 1.875rem 0.625rem 1.875rem 0.625rem;
   width: 100%;
   height: auto;
-  padding: 0 0 0.625rem 0;
 }
-.recovery-form__email__form .field, .recovery-form__number__form .field {
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section .recovery-via-email-win__form,
+  .recovery-section .recovery-via-num-win__form {
+    padding: 1.5625rem 0.3125rem 0.9375rem 0.3125rem;
+  }
+}
+@media (min-width: 1921px) {
+  .recovery-section .recovery-via-email-win__form,
+  .recovery-section .recovery-via-num-win__form {
+    padding: 2.1875rem 0.625rem 2.1875rem 0.625rem;
+  }
+}
+.recovery-section .recovery-via-email-win--step-1, .recovery-section .recovery-via-email-win--step-2,
+.recovery-section .recovery-via-num-win--step-1,
+.recovery-section .recovery-via-num-win--step-2 {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.recovery-section .recovery-via-email-win--step-1.is-active, .recovery-section .recovery-via-email-win--step-2.is-active,
+.recovery-section .recovery-via-num-win--step-1.is-active,
+.recovery-section .recovery-via-num-win--step-2.is-active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .recovery-section .recovery-via-email-win--step-1, .recovery-section .recovery-via-email-win--step-2,
+  .recovery-section .recovery-via-num-win--step-1,
+  .recovery-section .recovery-via-num-win--step-2 {
+    width: 27.5rem;
+  }
+}
+.recovery-section .recovery-via-email-win--step-1 .recovery-via-email-win__header,
+.recovery-section .recovery-via-email-win--step-1 .recovery-via-num-win__header, .recovery-section .recovery-via-email-win--step-2 .recovery-via-email-win__header,
+.recovery-section .recovery-via-email-win--step-2 .recovery-via-num-win__header,
+.recovery-section .recovery-via-num-win--step-1 .recovery-via-email-win__header,
+.recovery-section .recovery-via-num-win--step-1 .recovery-via-num-win__header,
+.recovery-section .recovery-via-num-win--step-2 .recovery-via-email-win__header,
+.recovery-section .recovery-via-num-win--step-2 .recovery-via-num-win__header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.25rem;
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 0.3125rem;
+  border-radius: 11px 11px 0px 0px;
+  background-color: var(--first-white-A75);
+}
+.recovery-section .recovery-via-email-win--step-1 .recovery-via-email-win__header__wrapper,
+.recovery-section .recovery-via-email-win--step-1 .recovery-via-num-win__header__wrapper, .recovery-section .recovery-via-email-win--step-2 .recovery-via-email-win__header__wrapper,
+.recovery-section .recovery-via-email-win--step-2 .recovery-via-num-win__header__wrapper,
+.recovery-section .recovery-via-num-win--step-1 .recovery-via-email-win__header__wrapper,
+.recovery-section .recovery-via-num-win--step-1 .recovery-via-num-win__header__wrapper,
+.recovery-section .recovery-via-num-win--step-2 .recovery-via-email-win__header__wrapper,
+.recovery-section .recovery-via-num-win--step-2 .recovery-via-num-win__header__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--first-black-A75);
   flex-direction: column;
-  gap: 1.5625rem;
+  width: 100%;
 }
-.recovery-form__email__form .field__label, .recovery-form__number__form .field__label {
-  top: 21%;
+.recovery-section .recovery-via-email-win--step-1 .recovery-via-email-win__header__wrapper__description,
+.recovery-section .recovery-via-email-win--step-1 .recovery-via-num-win__header__wrapper__description, .recovery-section .recovery-via-email-win--step-2 .recovery-via-email-win__header__wrapper__description,
+.recovery-section .recovery-via-email-win--step-2 .recovery-via-num-win__header__wrapper__description,
+.recovery-section .recovery-via-num-win--step-1 .recovery-via-email-win__header__wrapper__description,
+.recovery-section .recovery-via-num-win--step-1 .recovery-via-num-win__header__wrapper__description,
+.recovery-section .recovery-via-num-win--step-2 .recovery-via-email-win__header__wrapper__description,
+.recovery-section .recovery-via-num-win--step-2 .recovery-via-num-win__header__wrapper__description {
+  text-align: center;
 }
-.recovery-form__email button, .recovery-form__number button {
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section .recovery-via-email-win--step-1 .recovery-via-email-win__header__wrapper,
+  .recovery-section .recovery-via-email-win--step-1 .recovery-via-num-win__header__wrapper, .recovery-section .recovery-via-email-win--step-2 .recovery-via-email-win__header__wrapper,
+  .recovery-section .recovery-via-email-win--step-2 .recovery-via-num-win__header__wrapper,
+  .recovery-section .recovery-via-num-win--step-1 .recovery-via-email-win__header__wrapper,
+  .recovery-section .recovery-via-num-win--step-1 .recovery-via-num-win__header__wrapper,
+  .recovery-section .recovery-via-num-win--step-2 .recovery-via-email-win__header__wrapper,
+  .recovery-section .recovery-via-num-win--step-2 .recovery-via-num-win__header__wrapper {
+    font-size: var(--small-font);
+  }
+}
+@media (min-width: 1921px) {
+  .recovery-section .recovery-via-email-win--step-1 .recovery-via-email-win__header__wrapper,
+  .recovery-section .recovery-via-email-win--step-1 .recovery-via-num-win__header__wrapper, .recovery-section .recovery-via-email-win--step-2 .recovery-via-email-win__header__wrapper,
+  .recovery-section .recovery-via-email-win--step-2 .recovery-via-num-win__header__wrapper,
+  .recovery-section .recovery-via-num-win--step-1 .recovery-via-email-win__header__wrapper,
+  .recovery-section .recovery-via-num-win--step-1 .recovery-via-num-win__header__wrapper,
+  .recovery-section .recovery-via-num-win--step-2 .recovery-via-email-win__header__wrapper,
+  .recovery-section .recovery-via-num-win--step-2 .recovery-via-num-win__header__wrapper {
+    font-size: var(--medium-font);
+  }
+}
+.recovery-section .recovery-via-email-win--step-1 .form__panel, .recovery-section .recovery-via-email-win--step-2 .form__panel,
+.recovery-section .recovery-via-num-win--step-1 .form__panel,
+.recovery-section .recovery-via-num-win--step-2 .form__panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.recovery-section .recovery-via-email-win--step-1 .form__panel__button, .recovery-section .recovery-via-email-win--step-2 .form__panel__button,
+.recovery-section .recovery-via-num-win--step-1 .form__panel__button,
+.recovery-section .recovery-via-num-win--step-2 .form__panel__button {
   width: max-content;
   height: 2.5rem;
   padding: 0 0.3125rem 0 0.3125rem;
@@ -570,100 +890,246 @@ button:focus {
   font-size: var(--default-font);
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .recovery-form__email button, .recovery-form__number button {
+  .recovery-section .recovery-via-email-win--step-1 .form__panel__button, .recovery-section .recovery-via-email-win--step-2 .form__panel__button,
+  .recovery-section .recovery-via-num-win--step-1 .form__panel__button,
+  .recovery-section .recovery-via-num-win--step-2 .form__panel__button {
     font-size: var(--small-font);
+    height: 1.875rem;
+    padding: 0 0.3125rem 0 0.3125rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
-  .recovery-form__email button, .recovery-form__number button {
+  .recovery-section .recovery-via-email-win--step-1 .form__panel__button, .recovery-section .recovery-via-email-win--step-2 .form__panel__button,
+  .recovery-section .recovery-via-num-win--step-1 .form__panel__button,
+  .recovery-section .recovery-via-num-win--step-2 .form__panel__button {
     font-size: var(--small-font);
   }
 }
 @media (min-width: 1024px) and (max-width: 1440.98px) {
-  .recovery-form__email button, .recovery-form__number button {
+  .recovery-section .recovery-via-email-win--step-1 .form__panel__button, .recovery-section .recovery-via-email-win--step-2 .form__panel__button,
+  .recovery-section .recovery-via-num-win--step-1 .form__panel__button,
+  .recovery-section .recovery-via-num-win--step-2 .form__panel__button {
     font-size: var(--medium-font);
   }
 }
 @media (min-width: 1921px) {
-  .recovery-form__email button, .recovery-form__number button {
+  .recovery-section .recovery-via-email-win--step-1 .form__panel__button, .recovery-section .recovery-via-email-win--step-2 .form__panel__button,
+  .recovery-section .recovery-via-num-win--step-1 .form__panel__button,
+  .recovery-section .recovery-via-num-win--step-2 .form__panel__button {
     padding: 0.625rem;
     font-size: var(--medium-font);
   }
 }
-.recovery-form__choice__header {
-  width: 100%;
-  height: auto;
+.recovery-section .recovery-via-email-win--step-1 .form, .recovery-section .recovery-via-email-win--step-2 .form,
+.recovery-section .recovery-via-num-win--step-1 .form,
+.recovery-section .recovery-via-num-win--step-2 .form {
+  border-radius: 0 0 0.8125rem 0.8125rem;
 }
-.recovery-form__choice__wrapper {
+.recovery-section .recovery-via-email-win--step-1 .form__panel,
+.recovery-section .recovery-via-num-win--step-1 .form__panel {
+  justify-content: space-around;
+}
+.recovery-section .recovery-via-email-win--step-1 .form .field,
+.recovery-section .recovery-via-num-win--step-1 .form .field {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: auto;
   flex-direction: column;
-  padding: 0.3125rem;
-  color: var(--first-black-A75);
-  border-radius: 11px 11px 0px 0px;
-  background-color: var(--first-white-A75);
-  border-bottom: 1px solid var(--second-white-A50);
+  width: 100%;
+  gap: 1.5625rem;
 }
-.recovery-form__choice__wrapper h2,
-.recovery-form__choice__wrapper h3 {
-  font-weight: 700;
-}
-.recovery-form__choice__panel {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.9375rem;
-  height: auto;
-  background-color: var(--second-DarkGrey-A50);
-  border-bottom: 1px solid var(--second-white-A50);
-  border-radius: 0rem 0rem 0.75rem 0.75rem;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .recovery-form__choice__panel {
-    padding: 0.3125rem;
+@media (min-width: 1921px) {
+  .recovery-section .recovery-via-email-win--step-1 .form .field,
+  .recovery-section .recovery-via-num-win--step-1 .form .field {
+    gap: 2.1875rem;
   }
 }
-.recovery-form__choice__panel .button--switch {
-  width: 13.75rem;
-  height: max-content;
-  padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
-  color: var(--first-white-A85);
+.recovery-section .recovery-via-email-win--step-1 .form .field__input,
+.recovery-section .recovery-via-num-win--step-1 .form .field__input {
+  width: 26.25rem;
+  height: 2.5rem;
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .recovery-form__choice__panel .button--switch {
-    padding: 0.3125rem;
+  .recovery-section .recovery-via-email-win--step-1 .form .field__input,
+  .recovery-section .recovery-via-num-win--step-1 .form .field__input {
+    width: 17.5rem;
+    padding-left: 0.3125rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .recovery-section .recovery-via-email-win--step-1 .form .field__input,
+  .recovery-section .recovery-via-num-win--step-1 .form .field__input {
+    width: 23.75rem;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920.98px) {
+  .recovery-section .recovery-via-email-win--step-1 .form .field__input,
+  .recovery-section .recovery-via-num-win--step-1 .form .field__input {
+    width: 28.75rem;
+  }
+}
+@media (min-width: 1921px) {
+  .recovery-section .recovery-via-email-win--step-1 .form .field__input,
+  .recovery-section .recovery-via-num-win--step-1 .form .field__input {
+    width: 32.5rem;
+    height: 3.125rem;
+    border-radius: 0.4375rem;
+  }
+}
+.recovery-section .recovery-via-email-win--step-1 .form .field__input::placeholder,
+.recovery-section .recovery-via-num-win--step-1 .form .field__input::placeholder {
+  opacity: 0;
+}
+.recovery-section .recovery-via-email-win--step-1 .form .field__input[type=number],
+.recovery-section .recovery-via-num-win--step-1 .form .field__input[type=number] {
+  -moz-appearance: textfield;
+}
+.recovery-section .recovery-via-email-win--step-1 .form .field__input[type=number]::-webkit-outer-spin-button, .recovery-section .recovery-via-email-win--step-1 .form .field__input[type=number]::-webkit-inner-spin-button,
+.recovery-section .recovery-via-num-win--step-1 .form .field__input[type=number]::-webkit-outer-spin-button,
+.recovery-section .recovery-via-num-win--step-1 .form .field__input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.recovery-section .recovery-via-email-win--step-1 .form .field__label,
+.recovery-section .recovery-via-num-win--step-1 .form .field__label {
+  top: 19%;
+  left: 2.8125rem;
+  letter-spacing: 0.125rem;
+  font-size: var(--small-font);
+  --label-active-x: -3.7em;
+  --label-active-y: -2.4em;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section .recovery-via-email-win--step-1 .form .field__label,
+  .recovery-section .recovery-via-num-win--step-1 .form .field__label {
+    top: 21%;
+    left: 0.75rem;
+    letter-spacing: 0.0625rem;
+    font-size: var(--xSmall-font);
+    --label-active-x: -3.0em;
+    --label-active-y: -2.8em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .recovery-section .recovery-via-email-win--step-1 .form .field__label,
+  .recovery-section .recovery-via-num-win--step-1 .form .field__label {
+    top: 19%;
+    left: 1.25rem;
+    --label-active-x: -3.0em;
+    --label-active-y: -2.8em;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1440.98px) {
+  .recovery-section .recovery-via-email-win--step-1 .form .field__label,
+  .recovery-section .recovery-via-num-win--step-1 .form .field__label {
+    top: 19%;
+    left: 1.75rem;
+    --label-active-x: -3.0em;
+    --label-active-y: -2.8em;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920.98px) {
+  .recovery-section .recovery-via-email-win--step-1 .form .field__label,
+  .recovery-section .recovery-via-num-win--step-1 .form .field__label {
+    font-size: var(--default-font);
+  }
+}
+@media (min-width: 1921px) {
+  .recovery-section .recovery-via-email-win--step-1 .form .field__label,
+  .recovery-section .recovery-via-num-win--step-1 .form .field__label {
+    top: 22%;
+    left: 2.5rem;
+    font-size: var(--medium-font);
+    --label-active-x: -3.0em;
+    --label-active-y: -2.8em;
+  }
+}
+.recovery-section .recovery-via-email-win--step-2 .form,
+.recovery-section .recovery-via-num-win--step-2 .form {
+  gap: 2.1875rem;
+}
+.recovery-section .recovery-via-email-win--step-2 .form .code-field,
+.recovery-section .recovery-via-num-win--step-2 .form .code-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.recovery-section .recovery-via-email-win--step-2 .form .code-field__input,
+.recovery-section .recovery-via-num-win--step-2 .form .code-field__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  opacity: 0;
+  z-index: 1;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+.recovery-section .recovery-via-email-win--step-2 .form .code-field__input:hover, .recovery-section .recovery-via-email-win--step-2 .form .code-field__input:focus,
+.recovery-section .recovery-via-num-win--step-2 .form .code-field__input:hover,
+.recovery-section .recovery-via-num-win--step-2 .form .code-field__input:focus {
+  background-color: transparent;
+}
+.recovery-section .recovery-via-email-win--step-2 .form .code-field__label,
+.recovery-section .recovery-via-num-win--step-2 .form .code-field__label {
+  position: static;
+  letter-spacing: 0.125rem;
+  color: var(--first-white-A75);
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section .recovery-via-email-win--step-2 .form .code-field__label,
+  .recovery-section .recovery-via-num-win--step-2 .form .code-field__label {
     font-size: var(--xSmall-font);
   }
 }
 @media (min-width: 1441px) and (max-width: 1920.98px) {
-  .recovery-form__choice__panel .button--switch {
-    font-size: var(--small-font);
-  }
-}
-@media (min-width: 1921px) {
-  .recovery-form__choice__panel .button--switch {
-    padding: 0.4375rem;
+  .recovery-section .recovery-via-email-win--step-2 .form .code-field__label,
+  .recovery-section .recovery-via-num-win--step-2 .form .code-field__label {
     font-size: var(--default-font);
   }
 }
-
-.recovery-form__email {
-  display: none;
+@media (min-width: 1921px) {
+  .recovery-section .recovery-via-email-win--step-2 .form .code-field__label,
+  .recovery-section .recovery-via-num-win--step-2 .form .code-field__label {
+    font-size: var(--medium-font);
+  }
 }
+.recovery-section .recovery-via-email-win--step-2 .form .code-field__cells-wrapper,
+.recovery-section .recovery-via-num-win--step-2 .form .code-field__cells-wrapper {
+  display: flex;
+  gap: 0.9375rem;
+}
+.recovery-section .recovery-via-email-win--step-2 .form .code-field__cells-wrapper div,
+.recovery-section .recovery-via-num-win--step-2 .form .code-field__cells-wrapper div {
+  width: 1.25rem;
+  height: 3.125rem;
+  line-height: 50px;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: var(--big-font);
+  border-bottom: solid 3px var(--first-white-A35);
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section .recovery-via-email-win--step-2 .form .code-field__cells-wrapper div,
+  .recovery-section .recovery-via-num-win--step-2 .form .code-field__cells-wrapper div {
+    width: 0.9375rem;
+    font-size: var(--default-font);
+    border-bottom: solid 2px var(--first-white-A35);
+  }
+}
+
 .recovery-form__email__wrapper h2,
 .recovery-form__email__wrapper h3 {
   font-weight: 700;
 }
-.recovery-form__email__wrapper {
-  /*&.--title-step-1 {
-      display: none;
-  }*/
-}
 .recovery-form__email__wrapper.--title-step-2 {
   display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 .recovery-form__email__form .field.--email-form-step-1 {
   margin-top: 1.875rem;
@@ -727,7 +1193,16 @@ button:focus {
   }
 }
 .recovery-form__email__form .field.--email-form-step-2 {
+  opacity: 0;
+  visibility: hidden;
   display: none;
+}
+.recovery-form__email__form .field.--email-form-step-2.is-active {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+.recovery-form__email__form .field.--email-form-step-2 {
   margin-top: 2.5rem;
 }
 .recovery-form__email__form .field.--email-form-step-2 .cells-wrapper {
@@ -787,14 +1262,15 @@ button:focus {
   height: auto;
 }
 
-.recovery-form__number {
-  display: none;
-}
 .recovery-form__number__wrapper h2,
 .recovery-form__number__wrapper h3 {
   font-weight: 700;
 }
-.recovery-form__number__wrapper.--title-step-2 {
+.recovery-form__number__wrapper.--title-step-1.is-hidden, .recovery-form__number__wrapper.--title-step-2.is-hidden {
+  display: none;
+}
+.recovery-form__number__form .field.--number-form-step-1.is-hidden,
+.recovery-form__number__form .field.--number-form-step-2.is-hidden {
   display: none;
 }
 .recovery-form__number__form .field.--number-form-step-1 {
@@ -859,7 +1335,6 @@ button:focus {
   }
 }
 .recovery-form__number__form .field.--number-form-step-2 {
-  display: none;
   margin-top: 2.5rem;
 }
 .recovery-form__number__form .field.--number-form-step-2 .cells-wrapper {
@@ -931,7 +1406,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  margin: auto;
   width: 100%;
   height: 100%;
 }
@@ -948,57 +1423,77 @@ button:focus {
     background-image: url(../images/bg-page.png), linear-gradient(180deg, rgba(217, 217, 217, 0.35) 0%, rgba(132, 132, 132, 0.5) 10%, rgba(71, 71, 71, 0.9) 35%, #2b2b2b 75%);
   }
 }
-.login-page__container {
+.login-page .login-section,
+.login-page .recovery-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
 }
-.login-page__wrapper {
+.login-page .login-section.is-active,
+.login-page .recovery-section.is-active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+.login-page .login-section__reg-win, .login-page .login-section__auth-win,
+.login-page .recovery-section__reg-win,
+.login-page .recovery-section__auth-win {
   border: 2px, solid, var(--first-white-A75);
   position: absolute;
+  top: 49.9%;
+  left: 50%;
+  translate: -50% -50%;
   height: auto;
   border-radius: 14px;
   backdrop-filter: blur(50px);
-  transition: opacity 0.4s ease-in, transform 0.4s ease-in;
-}
-.login-page__wrapper.is-active {
-  opacity: 1;
-  pointer-events: all;
-  visibility: visible;
-}
-@media (min-width: 1441px) and (max-width: 1920.98px) {
-  .login-page__wrapper.--auth .button--primary {
-    margin-top: 2.1875rem;
-  }
+  transition: opacity 0.4s ease-in;
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
-  .login-page__wrapper {
+  .login-page .login-section__reg-win, .login-page .login-section__auth-win,
+  .login-page .recovery-section__reg-win,
+  .login-page .recovery-section__auth-win {
     border: 1px, solid, var(--first-white-A75);
     width: 19.375rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
-  .login-page__wrapper {
+  .login-page .login-section__reg-win, .login-page .login-section__auth-win,
+  .login-page .recovery-section__reg-win,
+  .login-page .recovery-section__auth-win {
     border: 1px, solid, var(--first-white-A75);
     width: 26.25rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1440.98px) {
-  .login-page__wrapper {
+  .login-page .login-section__reg-win, .login-page .login-section__auth-win,
+  .login-page .recovery-section__reg-win,
+  .login-page .recovery-section__auth-win {
     width: 30rem;
   }
 }
 @media (min-width: 1441px) and (max-width: 1920.98px) {
-  .login-page__wrapper {
+  .login-page .login-section__reg-win, .login-page .login-section__auth-win,
+  .login-page .recovery-section__reg-win,
+  .login-page .recovery-section__auth-win {
     width: 34.375rem;
   }
 }
 @media (min-width: 1921px) {
-  .login-page__wrapper {
+  .login-page .login-section__reg-win, .login-page .login-section__auth-win,
+  .login-page .recovery-section__reg-win,
+  .login-page .recovery-section__auth-win {
     width: 37.5rem;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920.98px) {
+  .login-page .login-section__auth-win .button--primary,
+  .login-page .recovery-section__auth-win .button--primary {
+    margin-top: 2.1875rem;
   }
 }
 
