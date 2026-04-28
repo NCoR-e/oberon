@@ -1,6 +1,7 @@
 @use '../../helpers' as *;
 
 .login-section {
+    padding: rem(20);
 
     &__reg-win,
     &__auth-win {
@@ -282,7 +283,7 @@
         @include hidden;
         width: max-content;
         height: rem(55);
-        margin-bottom: 0;
+        margin-top: auto;
 
         &.is-active {
             @include show;

@@ -45,6 +45,10 @@ label {
   cursor: pointer;
 }
 
+svg * {
+  transition-property: fill, stroke;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -195,11 +199,16 @@ button:focus {
   border-radius: 5px;
 }
 
+.login-section {
+  padding: 1.25rem;
+}
 .login-section__reg-win, .login-section__auth-win {
+  display: none;
   opacity: 0;
   visibility: hidden;
 }
 .login-section__reg-win.is-active, .login-section__auth-win.is-active {
+  display: block;
   opacity: 1;
   visibility: visible;
 }
@@ -544,13 +553,15 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
   opacity: 0;
   visibility: hidden;
   width: max-content;
   height: 3.4375rem;
-  margin-bottom: 0;
+  margin-top: auto;
 }
 .login-section__support.is-active {
+  display: block;
   opacity: 1;
   visibility: visible;
 }
@@ -595,6 +606,7 @@ button:focus {
 }
 
 .recovery-section__choice {
+  display: none;
   opacity: 0;
   visibility: hidden;
   border: 2px, solid, var(--first-white-A75);
@@ -602,16 +614,15 @@ button:focus {
   top: 49.9%;
   left: 50%;
   translate: -50% -50%;
-  display: none;
   height: auto;
   border-radius: 14px;
   backdrop-filter: blur(50px);
   transition: opacity 0.4s ease-in;
 }
 .recovery-section__choice.is-active {
+  display: block;
   opacity: 1;
   visibility: visible;
-  display: block;
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
   .recovery-section__choice {
@@ -622,12 +633,12 @@ button:focus {
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .recovery-section__choice {
     border: 1px, solid, var(--first-white-A75);
-    width: 26.25rem;
+    width: 28.75rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1440.98px) {
   .recovery-section__choice {
-    width: 30rem;
+    width: 32.5rem;
   }
 }
 @media (min-width: 1441px) and (max-width: 1920.98px) {
@@ -641,13 +652,14 @@ button:focus {
   }
 }
 .recovery-section__wrapper-email.is-active, .recovery-section__wrapper-num.is-active {
+  display: block;
   opacity: 1;
   visibility: visible;
 }
 .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+  display: none;
   opacity: 0;
   visibility: hidden;
-  border: 2px, solid, var(--first-white-A75);
   position: absolute;
   top: 49.9%;
   left: 50%;
@@ -756,8 +768,50 @@ button:focus {
     font-size: var(--default-font);
   }
 }
+.recovery-section .choice-win__panel .button--primary {
+  width: max-content;
+  height: max-content;
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--first-white-A85);
+  padding: 0.3125rem;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section .choice-win__panel .button--primary {
+    font-size: var(--xSmall-font);
+    width: 13.75rem;
+    text-indent: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .recovery-section .choice-win__panel .button--primary {
+    font-size: var(--xSmall-font);
+    height: 1.8125rem;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920.98px) {
+  .recovery-section .choice-win__panel .button--primary {
+    font-size: var(--small-font);
+  }
+}
+@media (min-width: 1921px) {
+  .recovery-section .choice-win__panel .button--primary {
+    font-size: var(--default-font);
+  }
+}
+.recovery-section .choice-win__panel .button--primary svg.back-in {
+  width: 1.375rem;
+  height: 1.125rem;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section .choice-win__panel .button--primary svg.back-in {
+    display: none;
+  }
+}
 .recovery-section .recovery-via-email-win,
 .recovery-section .recovery-via-num-win {
+  border: 2px, solid, var(--first-white-A75);
   display: none;
   opacity: 0;
   visibility: hidden;
@@ -920,10 +974,9 @@ button:focus {
     font-size: var(--medium-font);
   }
 }
-.recovery-section .recovery-via-email-win--step-1 .form, .recovery-section .recovery-via-email-win--step-2 .form,
-.recovery-section .recovery-via-num-win--step-1 .form,
-.recovery-section .recovery-via-num-win--step-2 .form {
-  border-radius: 0 0 0.8125rem 0.8125rem;
+.recovery-section .recovery-via-email-win--step-1 .form,
+.recovery-section .recovery-via-num-win--step-1 .form {
+  border-radius: 0 0 0.6875rem 0.6875rem;
 }
 .recovery-section .recovery-via-email-win--step-1 .form__panel,
 .recovery-section .recovery-via-num-win--step-1 .form__panel {
@@ -1047,6 +1100,7 @@ button:focus {
 .recovery-section .recovery-via-email-win--step-2 .form,
 .recovery-section .recovery-via-num-win--step-2 .form {
   gap: 2.1875rem;
+  border-radius: 0;
 }
 .recovery-section .recovery-via-email-win--step-2 .form .code-field,
 .recovery-section .recovery-via-num-win--step-2 .form .code-field {
@@ -1059,10 +1113,9 @@ button:focus {
 .recovery-section .recovery-via-email-win--step-2 .form .code-field__input,
 .recovery-section .recovery-via-num-win--step-2 .form .code-field__input {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 75%;
+  width: 12.5rem;
+  height: 20%;
+  top: 40%;
   opacity: 0;
   z-index: 1;
   padding: 0;
@@ -1121,277 +1174,37 @@ button:focus {
     border-bottom: solid 2px var(--first-white-A35);
   }
 }
-
-.recovery-form__email__wrapper h2,
-.recovery-form__email__wrapper h3 {
-  font-weight: 700;
+.recovery-section .recovery-via-email-win--step-2 .repeated-request,
+.recovery-section .recovery-via-num-win--step-2 .repeated-request {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--first-white-A35);
+  background-color: var(--first-DarkGrey-A75);
+  border-radius: 0 0 0.8125rem 0.8125rem;
+  padding: 0.625rem 0 0.625rem 0;
+  flex-direction: column;
+  gap: 0.3125rem;
 }
-.recovery-form__email__wrapper.--title-step-2 {
+.recovery-section .recovery-via-email-win--step-2 .repeated-request__counter,
+.recovery-section .recovery-via-num-win--step-2 .repeated-request__counter {
   display: none;
   opacity: 0;
   visibility: hidden;
+  color: var(--first-white-A75);
+  letter-spacing: 0.0625rem;
 }
-.recovery-form__email__form .field.--email-form-step-1 {
-  margin-top: 1.875rem;
-}
-.recovery-form__email__form .field.--email-form-step-1 input {
-  width: 26.25rem;
-  height: 2.5rem;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .recovery-form__email__form .field.--email-form-step-1 input {
-    width: 17.5rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023.98px) {
-  .recovery-form__email__form .field.--email-form-step-1 input {
-    width: 23.75rem;
-  }
-}
-@media (min-width: 1441px) and (max-width: 1920.98px) {
-  .recovery-form__email__form .field.--email-form-step-1 input {
-    width: 28.75rem;
-  }
-}
-@media (min-width: 1921px) {
-  .recovery-form__email__form .field.--email-form-step-1 input {
-    width: 32.5rem;
-    height: 3.125rem;
-    border-radius: 0.4375rem;
-  }
-}
-.recovery-form__email__form .field.--email-form-step-1 input::placeholder {
-  opacity: 0;
-}
-.recovery-form__email__form .field.--email-form-step-1 input[type=text] {
-  opacity: 1;
-}
-.recovery-form__email__form .field.--email-form-step-1 label {
-  left: 0.625rem;
-  letter-spacing: 0.125rem;
-  font-size: var(--small-font);
-  --label-active-x: -3.1em;
-  --label-active-y: -2.5em;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .recovery-form__email__form .field.--email-form-step-1 label {
-    left: 0.3125rem;
-    letter-spacing: 0.0625rem;
-    font-size: var(--xSmall-font);
-    --label-active-x: -3.2em;
-    --label-active-y: -3.8em;
-  }
-}
-@media (min-width: 1441px) and (max-width: 1920.98px) {
-  .recovery-form__email__form .field.--email-form-step-1 label {
-    font-size: var(--default-font);
-  }
-}
-@media (min-width: 1921px) {
-  .recovery-form__email__form .field.--email-form-step-1 label {
-    font-size: var(--medium-font);
-  }
-}
-.recovery-form__email__form .field.--email-form-step-2 {
-  opacity: 0;
-  visibility: hidden;
-  display: none;
-}
-.recovery-form__email__form .field.--email-form-step-2.is-active {
+.recovery-section .recovery-via-email-win--step-2 .repeated-request__counter.is-active,
+.recovery-section .recovery-via-num-win--step-2 .repeated-request__counter.is-active {
+  display: block;
   opacity: 1;
   visibility: visible;
-  display: block;
 }
-.recovery-form__email__form .field.--email-form-step-2 {
-  margin-top: 2.5rem;
-}
-.recovery-form__email__form .field.--email-form-step-2 .cells-wrapper {
-  display: flex;
-  gap: 0.625rem;
-}
-.recovery-form__email__form .field.--email-form-step-2 .cells-wrapper div {
-  width: 1.25rem;
-  height: 3.125rem;
-  border-bottom: solid 1px var(--first-white-A85);
-  transition: var(--transition-time);
-  text-align: center;
-  font-size: 24px;
-  line-height: 50px;
-}
-.recovery-form__email__form .field.--email-form-step-2 input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 75%;
-  opacity: 0;
-  z-index: 1;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-}
-.recovery-form__email__form .field.--email-form-step-2 input:hover, .recovery-form__email__form .field.--email-form-step-2 input:focus {
-  background-color: transparent;
-}
-.recovery-form__email__form .field.--email-form-step-2 label {
-  position: static;
-  letter-spacing: 0.125rem;
-  scale: none !important;
-  translate: none !important;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .recovery-form__email__form .field.--email-form-step-2 label {
-    font-size: var(--xSmall-font);
-  }
-}
-@media (min-width: 1441px) and (max-width: 1920.98px) {
-  .recovery-form__email__form .field.--email-form-step-2 label {
-    font-size: var(--default-font);
-  }
-}
-@media (min-width: 1921px) {
-  .recovery-form__email__form .field.--email-form-step-2 label {
-    font-size: var(--medium-font);
-  }
-}
-.recovery-form__email__form__panel {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: auto;
-}
-
-.recovery-form__number__wrapper h2,
-.recovery-form__number__wrapper h3 {
-  font-weight: 700;
-}
-.recovery-form__number__wrapper.--title-step-1.is-hidden, .recovery-form__number__wrapper.--title-step-2.is-hidden {
-  display: none;
-}
-.recovery-form__number__form .field.--number-form-step-1.is-hidden,
-.recovery-form__number__form .field.--number-form-step-2.is-hidden {
-  display: none;
-}
-.recovery-form__number__form .field.--number-form-step-1 {
-  margin-top: 2.5rem;
-}
-.recovery-form__number__form .field.--number-form-step-1 input {
-  width: 26.25rem;
-  height: 2.5rem;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .recovery-form__number__form .field.--number-form-step-1 input {
-    width: 17.5rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023.98px) {
-  .recovery-form__number__form .field.--number-form-step-1 input {
-    width: 23.75rem;
-  }
-}
-@media (min-width: 1441px) and (max-width: 1920.98px) {
-  .recovery-form__number__form .field.--number-form-step-1 input {
-    width: 28.75rem;
-  }
-}
-@media (min-width: 1921px) {
-  .recovery-form__number__form .field.--number-form-step-1 input {
-    width: 32.5rem;
-    height: 3.125rem;
-    border-radius: 0.4375rem;
-  }
-}
-.recovery-form__number__form .field.--number-form-step-1 input::placeholder {
-  opacity: 0;
-}
-.recovery-form__number__form .field.--number-form-step-1 input[type=text] {
-  opacity: 1;
-}
-.recovery-form__number__form .field.--number-form-step-1 label {
-  left: 0.625rem;
-  letter-spacing: 0.125rem;
-  font-size: var(--small-font);
-  --label-active-x: -3.7em;
-  --label-active-y: -2.5em;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .recovery-form__number__form .field.--number-form-step-1 label {
-    left: 0.3125rem;
-    letter-spacing: 0.0625rem;
-    font-size: var(--xSmall-font);
-    --label-active-x: -3.2em;
-    --label-active-y: -3.8em;
-  }
-}
-@media (min-width: 1441px) and (max-width: 1920.98px) {
-  .recovery-form__number__form .field.--number-form-step-1 label {
-    font-size: var(--default-font);
-  }
-}
-@media (min-width: 1921px) {
-  .recovery-form__number__form .field.--number-form-step-1 label {
-    font-size: var(--medium-font);
-  }
-}
-.recovery-form__number__form .field.--number-form-step-2 {
-  margin-top: 2.5rem;
-}
-.recovery-form__number__form .field.--number-form-step-2 .cells-wrapper {
-  display: flex;
-  gap: 0.625rem;
-}
-.recovery-form__number__form .field.--number-form-step-2 .cells-wrapper div {
-  width: 1.25rem;
-  height: 3.125rem;
-  border-bottom: solid 1px var(--first-white-A85);
-  font-size: 24px;
-  text-align: center;
-  line-height: 50px;
-  transition: all 0.2s;
-}
-.recovery-form__number__form .field.--number-form-step-2 input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 75%;
-  opacity: 0;
-  z-index: 1;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-}
-.recovery-form__number__form .field.--number-form-step-2 input:hover, .recovery-form__number__form .field.--number-form-step-2 input:focus {
-  background-color: transparent;
-}
-.recovery-form__number__form .field.--number-form-step-2 label {
-  position: static;
-  letter-spacing: 0.125rem;
-  scale: none !important;
-  translate: none !important;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .recovery-form__number__form .field.--number-form-step-2 label {
-    font-size: var(--xSmall-font);
-  }
-}
-@media (min-width: 1441px) and (max-width: 1920.98px) {
-  .recovery-form__number__form .field.--number-form-step-2 label {
-    font-size: var(--default-font);
-  }
-}
-@media (min-width: 1921px) {
-  .recovery-form__number__form .field.--number-form-step-2 label {
-    font-size: var(--medium-font);
-  }
-}
-.recovery-form__number__form__panel {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: auto;
+.recovery-section .recovery-via-email-win--step-2 .repeated-request .button--primary,
+.recovery-section .recovery-via-num-win--step-2 .repeated-request .button--primary {
+  color: var(--first-white-A75);
+  font-size: var(--xSmall-font);
+  padding: 0.1875rem;
 }
 
 .login-page {
@@ -1425,17 +1238,18 @@ button:focus {
 }
 .login-page .login-section,
 .login-page .recovery-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  display: none;
   opacity: 0;
   visibility: hidden;
-  display: none;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease-in;
 }
 .login-page .login-section.is-active,
 .login-page .recovery-section.is-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: block;
   opacity: 1;
   visibility: visible;

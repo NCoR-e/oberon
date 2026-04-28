@@ -5,7 +5,6 @@
         @include hidden;
         @include border-pack(2px, solid, var(--first-white-A75));
         @include abs-center;
-        display: none;
         height: auto;
         border-radius: 14px;
         backdrop-filter: blur(50px);
@@ -13,7 +12,6 @@
 
         &.is-active {
             @include show;
-            display: block;
         }
 
         @include mobile-above {
@@ -23,11 +21,11 @@
 
         @include tablet-above {
             @include border-pack(1px, solid, var(--first-white-A75));
-            width: rem(420);
+            width: rem(460);
         }
 
         @include laptop-above {
-            width: rem(480);
+            width: rem(520);
         }
 
         @include desktop-xl-above {
@@ -46,7 +44,6 @@
         }
 
         @include hidden;
-        @include border-pack(2px, solid, var(--first-white-A75));
         @include abs-center;
         height: auto;
         border-radius: 14px;
@@ -145,17 +142,54 @@
                         font-size: var(--default-font);
                     }
                 }
+
+                &--primary {
+                    width: max-content;
+                    height: max-content;
+                    text-indent: -9999px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    color: var(--first-white-A85);
+                    padding: rem(5);
+
+                    @include mobile-above {
+                        font-size: var(--xSmall-font);
+                        width: rem(220);
+                        text-indent: 0;
+                    }
+
+                    @include tablet-above {
+                        font-size: var(--xSmall-font);
+                        height: rem(29);
+                    }
+
+                    @include desktop-xl-above {
+                        font-size: var(--small-font);
+                    }
+
+                    @include ultra-wide {
+                        font-size: var(--default-font);
+                    }
+
+                    svg.back-in {
+                        width: rem(22);
+                        height: rem(18);
+
+                        @include mobile-above {
+                            display: none;
+                        }
+                    }
+                }
             }
         }
     }
 
     .recovery-via-email-win,
     .recovery-via-num-win {
-        display: none;
+        @include border-pack(2px, solid, var(--first-white-A75));
         @include hidden;
 
         &.is-active {
-            display: block;
             @include show;
         }
 
@@ -176,11 +210,9 @@
 
         &--step-1,
         &--step-2 {
-            display: none;
             @include hidden;
 
             &.is-active {
-                display: block;
                 @include show;
             }
 
@@ -195,12 +227,13 @@
 
             .form {
                 @include styles-form-panel;
-                border-radius: 0 0 rem(13) rem(13);
             }
         }
 
         &--step-1 {
             .form {
+                border-radius: 0 0 rem(11) rem(11);
+
                 &__panel {
                     justify-content: space-around;
                 }
@@ -303,6 +336,7 @@
         &--step-2 {
             .form {
                 gap: rem(35);
+                border-radius: 0;
 
                 .code-field {
                     @include flex (flex, center, center);
@@ -311,10 +345,9 @@
 
                     &__input {
                         position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 75%;
+                        width: rem(200);
+                        height: 20%;
+                        top: 40%;
                         opacity: 0;
                         z-index: 1;
                         padding: 0;
@@ -365,6 +398,32 @@
                             }
                         }
                     }
+                }
+            }
+
+            .repeated-request {
+                @include flex (flex, center, center);
+                border-top: 1px solid var(--first-white-A35);
+                background-color: var(--first-DarkGrey-A75);
+                border-radius: 0 0 rem(13) rem(13);
+                padding: rem(10) 0 rem(10) 0;
+                flex-direction: column;
+                gap: rem(5);
+
+                &__counter {
+                    @include hidden;
+                    color: var(--first-white-A75);
+                    letter-spacing: rem(1);
+
+                    &.is-active {
+                        @include show;
+                    }
+                }
+
+                .button--primary {
+                    color: var(--first-white-A75);
+                    font-size: var(--xSmall-font);
+                    padding: rem(3);
                 }
             }
         }
