@@ -1,18 +1,40 @@
 @use '../../helpers' as *;
 
 .recovery-section {
+
+    &__wrapper-email,
+    &__wrapper-num {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.4s ease-in,
+            visibility 0.4s ease-in;
+
+        &.is-active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
     &__choice {
-        @include hidden;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.4s ease-in,
+            visibility 0.4s ease-in;
+
+        &.is-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
         @include border-pack(2px, solid, var(--first-white-A75));
         @include abs-center;
         height: auto;
         border-radius: 14px;
         backdrop-filter: blur(50px);
-        transition: opacity 0.4s ease-in;
-
-        &.is-active {
-            @include show;
-        }
 
         @include mobile-above {
             @include border-pack(1px, solid, var(--first-white-A75));
@@ -26,43 +48,6 @@
 
         @include laptop-above {
             width: rem(520);
-        }
-
-        @include desktop-xl-above {
-            width: rem(550);
-        }
-
-        @include ultra-wide {
-            width: rem(600);
-        }
-    }
-
-    &__wrapper-email,
-    &__wrapper-num {
-        &.is-active {
-            @include show;
-        }
-
-        @include hidden;
-        @include abs-center;
-        height: auto;
-        border-radius: 14px;
-        backdrop-filter: blur(50px);
-        transition: opacity 0.4s ease-in;
-
-
-        @include mobile-above {
-            @include border-pack(1px, solid, var(--first-white-A75));
-            width: rem(310);
-        }
-
-        @include tablet-above {
-            @include border-pack(1px, solid, var(--first-white-A75));
-            width: rem(420);
-        }
-
-        @include laptop-above {
-            width: rem(480);
         }
 
         @include desktop-xl-above {
@@ -184,14 +169,41 @@
         }
     }
 
+    &__wrapper-email,
+    &__wrapper-num {
+        @include abs-center;
+        height: auto;
+        border-radius: 14px;
+        backdrop-filter: blur(50px);
+        transition: opacity 0.4s ease-in;
+
+
+        @include mobile-above {
+            @include border-pack(1px, solid, var(--first-white-A75));
+            width: rem(310);
+        }
+
+        @include tablet-above {
+            @include border-pack(1px, solid, var(--first-white-A75));
+            width: rem(420);
+        }
+
+        @include laptop-above {
+            width: rem(480);
+        }
+
+        @include desktop-xl-above {
+            width: rem(550);
+        }
+
+        @include ultra-wide {
+            width: rem(600);
+        }
+    }
+
     .recovery-via-email-win,
     .recovery-via-num-win {
         @include border-pack(2px, solid, var(--first-white-A75));
-        @include hidden;
-
-        &.is-active {
-            @include show;
-        }
 
         &__form {
             @include flex (flex, center, center);

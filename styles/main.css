@@ -203,12 +203,13 @@ button:focus {
   padding: 1.25rem;
 }
 .login-section__reg-win, .login-section__auth-win {
-  display: none;
+  position: absolute;
   opacity: 0;
   visibility: hidden;
+  transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
 }
 .login-section__reg-win.is-active, .login-section__auth-win.is-active {
-  display: block;
+  position: static;
   opacity: 1;
   visibility: visible;
 }
@@ -550,12 +551,12 @@ button:focus {
   }
 }
 .login-section__support {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   display: none;
   opacity: 0;
   visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: max-content;
   height: 3.4375rem;
   margin-top: auto;
@@ -605,10 +606,27 @@ button:focus {
   }
 }
 
-.recovery-section__choice {
-  display: none;
+.recovery-section__wrapper-email, .recovery-section__wrapper-num {
+  position: absolute;
   opacity: 0;
   visibility: hidden;
+  transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+}
+.recovery-section__wrapper-email.is-active, .recovery-section__wrapper-num.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.recovery-section__choice {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+}
+.recovery-section__choice.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.recovery-section__choice {
   border: 2px, solid, var(--first-white-A75);
   position: absolute;
   top: 49.9%;
@@ -617,12 +635,6 @@ button:focus {
   height: auto;
   border-radius: 14px;
   backdrop-filter: blur(50px);
-  transition: opacity 0.4s ease-in;
-}
-.recovery-section__choice.is-active {
-  display: block;
-  opacity: 1;
-  visibility: visible;
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
   .recovery-section__choice {
@@ -648,51 +660,6 @@ button:focus {
 }
 @media (min-width: 1921px) {
   .recovery-section__choice {
-    width: 37.5rem;
-  }
-}
-.recovery-section__wrapper-email.is-active, .recovery-section__wrapper-num.is-active {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-.recovery-section__wrapper-email, .recovery-section__wrapper-num {
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 49.9%;
-  left: 50%;
-  translate: -50% -50%;
-  height: auto;
-  border-radius: 14px;
-  backdrop-filter: blur(50px);
-  transition: opacity 0.4s ease-in;
-}
-@media (min-width: 321px) and (max-width: 767.98px) {
-  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
-    border: 1px, solid, var(--first-white-A75);
-    width: 19.375rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023.98px) {
-  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
-    border: 1px, solid, var(--first-white-A75);
-    width: 26.25rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1440.98px) {
-  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
-    width: 30rem;
-  }
-}
-@media (min-width: 1441px) and (max-width: 1920.98px) {
-  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
-    width: 34.375rem;
-  }
-}
-@media (min-width: 1921px) {
-  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
     width: 37.5rem;
   }
 }
@@ -809,18 +776,46 @@ button:focus {
     display: none;
   }
 }
+.recovery-section__wrapper-email, .recovery-section__wrapper-num {
+  position: absolute;
+  top: 49.9%;
+  left: 50%;
+  translate: -50% -50%;
+  height: auto;
+  border-radius: 14px;
+  backdrop-filter: blur(50px);
+  transition: opacity 0.4s ease-in;
+}
+@media (min-width: 321px) and (max-width: 767.98px) {
+  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+    border: 1px, solid, var(--first-white-A75);
+    width: 19.375rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+    border: 1px, solid, var(--first-white-A75);
+    width: 26.25rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1440.98px) {
+  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+    width: 30rem;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920.98px) {
+  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+    width: 34.375rem;
+  }
+}
+@media (min-width: 1921px) {
+  .recovery-section__wrapper-email, .recovery-section__wrapper-num {
+    width: 37.5rem;
+  }
+}
 .recovery-section .recovery-via-email-win,
 .recovery-section .recovery-via-num-win {
   border: 2px, solid, var(--first-white-A75);
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-}
-.recovery-section .recovery-via-email-win.is-active,
-.recovery-section .recovery-via-num-win.is-active {
-  display: block;
-  opacity: 1;
-  visibility: visible;
 }
 .recovery-section .recovery-via-email-win__form,
 .recovery-section .recovery-via-num-win__form {
@@ -1238,21 +1233,21 @@ button:focus {
 }
 .login-page .login-section,
 .login-page .recovery-section {
-  display: none;
+  position: absolute;
   opacity: 0;
   visibility: hidden;
+  transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
   width: 100%;
   height: 100%;
-  transition: opacity 0.4s ease-in;
 }
 .login-page .login-section.is-active,
 .login-page .recovery-section.is-active {
+  position: static;
+  opacity: 1;
+  visibility: visible;
   display: flex;
   justify-content: center;
   align-items: center;
-  display: block;
-  opacity: 1;
-  visibility: visible;
 }
 .login-page .login-section__reg-win, .login-page .login-section__auth-win,
 .login-page .recovery-section__reg-win,
@@ -1265,7 +1260,6 @@ button:focus {
   height: auto;
   border-radius: 14px;
   backdrop-filter: blur(50px);
-  transition: opacity 0.4s ease-in;
 }
 @media (min-width: 321px) and (max-width: 767.98px) {
   .login-page .login-section__reg-win, .login-page .login-section__auth-win,

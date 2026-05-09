@@ -5,16 +5,22 @@
 
     &__reg-win,
     &__auth-win {
-        @include hidden;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: 
+            opacity 0.4s ease-in,
+            visibility 0.4s ease-in;
 
         &.is-active {
-            @include show;
+            position: static;
+            opacity: 1;
+            visibility: visible;
         }
     }
 
     .reg-win,
     .auth-win {
-
         &__header {
             width: 100%;
             height: max-content
@@ -279,8 +285,8 @@
     }
 
     &__support {
-        @include flex(flex, center, center);
         @include hidden;
+        @include flex(flex, center, center);
         width: max-content;
         height: rem(55);
         margin-top: auto;
