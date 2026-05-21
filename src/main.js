@@ -1,0 +1,1 @@
+import * as LoginPage from '@/pages/login/login';
