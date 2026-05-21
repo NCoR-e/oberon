@@ -1,0 +1,28 @@
+@use '@helpers' as *;
+
+button {
+    @include flex(flex, center, center);
+    transition: all var(--transition-time);
+    background-color: transparent;
+    letter-spacing: rem(2);
+    visibility: inherit;
+    opacity: inherit;
+    outline: 0;
+
+    &.is-active {
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            cursor: pointer;
+            background-color: var(--third-white-A15);
+        }
+    }
+
+    &:focus {
+        background-color: var(--third-white-A15);
+    }
+}

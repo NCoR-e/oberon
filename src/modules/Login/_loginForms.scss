@@ -1,0 +1,204 @@
+@use '@helpers' as *;
+@use '@components' as *;
+@use '@ui/Buttons';
+@use '@ui/Inputs';
+
+.login-section {
+
+    .reg-win,
+    .auth-win {
+        @include border-pack(2px, solid, var(--first-white-A75));
+        width: max-content;
+
+        @include mobile-above {
+            @include border-pack(1px, solid, var(--first-white-A75));
+        }
+
+        .header {
+            .wrapper {
+                .logo {
+                    max-width: fluid(72, 42);
+                }
+
+                .title {
+                    @include fluid-text(28, 22);
+                    display: inline-block;
+                    font-family: "Allerta";
+                    letter-spacing: rem(5);
+                    padding-left: rem(40);
+                    color: var(--first-black-A75);
+                    text-shadow: 0px 4px 4px var(--first-black-A15);
+                }
+            }
+        }
+
+        .panel {
+            @include mobile-above {
+                padding: rem(5);
+            }
+
+            .nav-button {
+                &.button--switch {
+                    @include fluid-text(18, 14);
+
+                    @include mobile-above {
+                        padding: rem(5);
+                    }
+
+                    @include ultra-wide {
+                        padding: rem(7);
+                    }
+                }
+            }
+        }
+
+        .form {
+            padding: 0 rem(30) rem(15) rem(30);
+            border-radius: 0 0 rem(13) rem(13);
+
+            @include mobile-above {
+                padding: rem(10);
+            }
+
+            @include tablet-above {
+                padding: 0 rem(10) rem(10) rem(10);
+            }
+
+            .field {
+                margin-top: rem(40);
+
+                @include mobile-above {
+                    margin-top: rem(30);
+                }
+
+                @include tablet-above {
+                    margin-top: rem(30);
+                }
+
+                .input {
+                    width: fluid(520, 280);
+
+                    @include ultra-wide {
+                        height: rem(50);
+                        border-radius: rem(7);
+                    }
+
+                    &::placeholder {
+                        opacity: 0;
+                    }
+
+                    &[type="number"] {
+                        -moz-appearance: textfield;
+
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                    }
+                }
+
+                .label {
+                    @include fluid-text(20, 14);
+                    top: 50%;
+                    left: rem(10);
+                    letter-spacing: rem(2);
+                    --label-active-y: -2.6em;
+
+                    &[for="reg-num"] {
+                        --label-active-x: -2.8em;
+                    }
+
+                    @include mobile-above {
+                        left: rem(5);
+                        letter-spacing: rem(1);
+                        --label-active-x: -1.2em;
+                        --label-active-y: -2.9em;
+
+                        &[for="reg-num"] {
+                            --label-active-x: -2.2em;
+                            --label-active-y: -2.9em;
+                        }
+                    }
+                }
+            }
+
+            .form-description {
+                @include flex (flex, center, center);
+                width: fluid(320, 280);
+                margin-top: rem(15);
+
+                @include mobile-above {
+                    margin-top: rem(20);
+                }
+
+                p {
+                    @include fluid-text(18, 14);
+                    color: var(--first-white-A50);
+                    text-align: center;
+
+                    @include desktop-xl-above {
+                        margin-top: rem(15);
+                    }
+
+                    @include ultra-wide {
+                        margin-top: rem(15);
+                    }
+                }
+            }
+
+            .button-form {
+                @include fluid-text(20, 14);
+                max-width: fluid(600, 310);
+                @include border-pack(1px, solid, var(--first-white-A75));
+
+                @include mobile-above {
+                    height: rem(30);
+                }
+
+                @include desktop-xl-above {
+                    margin-top: rem(20);
+                }
+
+                @include ultra-wide {
+                    margin-top: rem(20);
+                    padding: rem(10);
+                }
+            }
+        }
+
+        .auth-win {
+            .button--primary {
+                @include desktop-xl-above {
+                    margin-top: rem(35);
+                }
+            }
+        }
+    }
+
+    .support-button {
+        @include hidden;
+        height: rem(55);
+        padding: rem(35);
+        margin: 0 auto;
+
+        &.is-active {
+            @include show;
+
+            button {
+                @include show;
+            }
+        }
+
+        &.button--action {
+            @include fluid-text(20, 14);
+            color: var(--first-white-A85);
+            height: max-content;
+            padding: rem(10);
+
+            @include ultra-wide {
+                height: rem(50);
+            }
+        }
+    }
+}

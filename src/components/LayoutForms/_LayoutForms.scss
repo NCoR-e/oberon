@@ -1,0 +1,132 @@
+@use '@helpers' as *;
+
+.login-section {
+    .header {
+        width: 100%;
+        height: auto;
+    }
+
+    .wrapper {
+        @include flex(flex, center, center);
+        padding: rem(5) 0px rem(5) 0px;
+        border-radius: 11px 11px 0px 0px;
+        background-color: var(--first-white-A75);
+    }
+
+    .panel {
+        @include flex(flex, space-around, center);
+        padding: rem(10) 0px rem(10) 0px;
+        height: auto;
+        border-bottom: 1px solid var(--second-white-A50);
+        background-color: var(--second-DarkGrey-A50);
+
+        .nav-button {
+            &.button--switch {
+                width: max-content;
+                height: max-content;
+                padding: rem(5) rem(10) rem(5) rem(10);
+                color: var(--first-white-A85);
+            }
+        }
+    }
+
+    .form {
+        @include flex(flex, center, center);
+        flex-direction: column;
+        height: auto;
+
+        .input {
+            height: rem(40);
+        }
+
+        .button-form {
+            margin-top: rem(15);
+            width: max-content;
+            height: rem(40);
+            padding: 0 rem(5) 0 rem(5);
+            color: var(--first-white-A85);
+        }
+    }
+}
+
+.recovery-section {
+    .header {
+        width: 100%;
+        height: auto;
+
+
+        .wrapper {
+            @include flex(flex, center, center);
+            width: 100%;
+            height: auto;
+            padding: rem(5);
+            color: var(--first-black-A75);
+            border-radius: 11px 11px 0px 0px;
+            background-color: var(--first-white-A75);
+        }
+
+        .panel {
+            @include flex(flex, space-around, center);
+            height: auto;
+            gap: rem(10);
+            padding: rem(10);
+            background-color: var(--second-DarkGrey-A50);
+            border-bottom: 1px solid var(--second-white-A50);
+            border-radius: rem(0) rem(0) rem(12) rem(12);
+        }
+    }
+
+    .form {
+        @include flex (flex, center, center);
+        padding: rem(30) rem(10) rem(30) rem(10);
+        width: 100%;
+        height: auto;
+    }
+
+    .step-1,
+    .step-2 {
+        .header {
+            @include flex (flex, center, center);
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            padding: rem(5);
+            color: var(--first-black-A75);
+            border-radius: 11px 11px 0px 0px;
+            background-color: var(--first-white-A75);
+
+            .description {
+                text-align: center;
+            }
+
+        }
+
+        .form {
+            @include flex (flex, center, center);
+            width: 100%;
+            height: auto;
+            border-radius: 11px 11px 0px 0px;
+            background-color: var(--first-DarkGrey-A85);
+
+            .field {
+                .form-panel {
+                    @include flex (flex, space-around, center);
+                    width: 100%;
+
+                    .panel-button {
+                        width: max-content;
+                        height: rem(40);
+                        padding: 0 rem(5) 0 rem(5);
+                        color: var(--first-white-A85);
+                        font-size: var(--default-font);
+                    }
+                }
+            }
+
+            .input {
+                width: rem(420);
+                height: rem(40);
+            }
+        }
+    }
+}

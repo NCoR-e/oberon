@@ -1,0 +1,79 @@
+@use '@helpers' as *;
+@use '@modules/Login' as pages;
+
+.login-page {
+    @include flex(flex, center, center);
+    @include bg-pages;
+    width: 100%;
+    min-height: 100vh;
+    padding: rem(20);
+    font-family: 'Roboto';
+
+    @include mobile-above {
+        background: linear-gradient(180deg,
+                rgba(217, 217, 217, 0.35) 0%,
+                rgba(132, 132, 132, 0.5) 10%,
+                rgba(71, 71, 71, 0.9) 35%,
+                #2b2b2b 75%);
+    }
+
+    @include tablet-above {
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-image: url(/static/images/background/bg-page.png),
+            linear-gradient(180deg,
+                rgba(217, 217, 217, 0.35) 0%,
+                rgba(132, 132, 132, 0.5) 10%,
+                rgba(71, 71, 71, 0.9) 35%,
+                #2b2b2b 75%);
+    }
+
+    .login-section,
+    .recovery-section {
+        @include hidden;
+        transition:
+            opacity 0.4s ease-in,
+            visibility 0.4s ease-in;
+
+        &.is-active {
+            @include show;
+            @include flex(flex, center, center);
+            flex-direction: column;
+        }
+
+        .reg-win,
+        .auth-win,
+        .choice-win,
+        .recovery-email,
+        .recovery-num {
+            @include hidden;
+            transition:
+                opacity 0.4s ease-in,
+                visibility 0.4s ease-in;
+            border-radius: rem(14);
+            background-color: var(--first-DarkGrey-A85);
+
+            &.is-active {
+                @include show;
+            }
+        }
+
+        .recovery-email,
+        .recovery-num {
+
+            &.step-1,
+            &.step-2 {
+                @include hidden;
+                transition:
+                    opacity 0.4s ease-in,
+                    visibility 0.4s ease-in;
+                border-radius: rem(14);
+
+                &.is-active {
+                    @include show;
+                }
+            }
+        }
+    }
+}
