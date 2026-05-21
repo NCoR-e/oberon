@@ -1,9 +1,0 @@
-@use '../../../helpers/' as *;
-
-.form {
-    @include flex(flex, center, center);
-    width: 100%;
-    height: max-content;
-    flex-direction: column;
-    background-color: var(--first-DarkGrey-A75);
-}
