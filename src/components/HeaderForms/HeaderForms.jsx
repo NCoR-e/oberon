@@ -1,10 +1,11 @@
+const base = import.meta.env.BASE_URL;
 export default ({type, labelMethodRecovery}) => {
 
     if (type === 'login')
         return (
             <header className='header'>
                 <div className='wrapper'>
-                    <img className="logo" src='/images/logo/black-logo.png' alt='чёрный логотип сайта' />
+                    <img className="logo" src={`${base}images/logo/black-logo.png`} alt='чёрный логотип сайта' />
                     <h1 className='title'>OBERON</h1>
                 </div>
 
@@ -26,7 +27,7 @@ export default ({type, labelMethodRecovery}) => {
                 <nav className='panel' aria-label='Панель с кнопками переключения'>
                     <button className='nav-button button--primary' aria-label='Вернуться назад' data-js-button='auth'>
                         <svg className='back-in'>
-                            <use xlinkHref="/icons/sprite.svg#back-arrow_small-set"></use>
+                            <use xlinkHref={`${base}icons/sprite.svg#back-arrow_small-set`}></use>
                         </svg><span>Назад</span>
                     </button>
                     <button className='nav-button button--switch' data-js-button='recovery-email'>По e-mail</button>
